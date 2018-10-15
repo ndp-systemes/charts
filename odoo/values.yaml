@@ -1,0 +1,169 @@
+## NDP Systèmes Odoo image version
+## ref: https://hub.docker.com/r/bitnami/odoo/tags/
+##
+image:
+  registry: docker.io
+  repository: ndpsystemes/odoo
+  tag: "10.0"
+  ## Specify a imagePullPolicy
+  ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
+  ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+  ##
+  pullPolicy: IfNotPresent
+
+odoo:
+  workers: 3
+  ## Set to have none default value
+  limit_time_cpu:
+
+
+git:
+  ## Git server where to fetch sources
+  server: gitlab.ndp-systemes.fr
+
+  group: odoo-addons
+
+  ## Set to override
+  ## Defaults to 10.0-{{ .Release.Name }}-production
+  branch:
+
+  depProject1: common-modules
+  depProject2: community-addons
+  depProject3:
+
+  ## Set to override project git repositories.
+  repo1:
+  repo2:
+  repo3:
+  repo4:
+
+##
+## PostgreSQL chart configuration
+##
+postgresql:
+
+  postgresUser: odoo
+
+  ## PostgreSQL password
+  ## ref: https://hub.docker.com/_/postgres/
+  ##
+  # postgresPassword:
+
+  ## Enable persistence using Persistent Volume Claims
+  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+  ##
+  persistence:
+    enabled: true
+    ## postgresql data Persistent Volume Storage Class
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    storageClass: "fast-disks"
+    accessMode: ReadWriteOnce
+    size: 20Gi
+
+## Kubernetes svc configuration
+## For minikube, set this to NodePort, elsewhere use LoadBalancer
+##
+## Use serviceLoadBalancerIP to request a specific static IP,
+## otherwise leave blank
+##
+service:
+  ## Kubernetes svc type
+  ## For minikube, set this to NodePort, elsewhere use LoadBalancer
+  ##
+  type: NodePort
+
+  ## Enable client source IP preservation
+  ## ref http://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
+  ##
+  externalTrafficPolicy: Cluster
+
+## Configure the ingress resource that allows you to access the
+## Odoo installation. Set up the URL
+## ref: http://kubernetes.io/docs/user-guide/ingress/
+##
+ingress:
+  ## Leave empty to have default name
+  name:
+  ## Default domain for ingress
+  domain: test.ndp-systemes.fr
+  ## Set to true to enable ingress record generation
+  enabled: true
+
+  ## Set this to true in order to enable TLS on the ingress record
+  ## A side effect of this will be that the backend odoo service will be connected at port 443
+  tls: false
+
+  ## If TLS is set to true, you must declare what secret will store the key/certificate for TLS
+  tlsSecret: odoo.local-tls
+
+  ## Ingress annotations done as key:value pairs
+  ## If you're using kube-lego, you will want to add:
+  ## kubernetes.io/tls-acme: true
+  ##
+  ## For a full list of possible ingress annotations, please see
+  ## ref: https://github.com/kubernetes/ingress-nginx/blob/master/docs/annotations.md
+  ##
+  ## If tls is set to true, annotation ingress.kubernetes.io/secure-backends: "true" will automatically be set
+  annotations:
+  #  kubernetes.io/ingress.class: nginx
+  #  kubernetes.io/tls-acme: true
+
+  secrets:
+  ## If you're providing your own certificates, please use this to add the certificates as secrets
+  ## key and certificate should start with -----BEGIN CERTIFICATE----- or
+  ## -----BEGIN RSA PRIVATE KEY-----
+  ##
+  ## name should line up with a tlsSecret set further up
+  ## If you're using kube-lego, this is unneeded, as it will create the secret for you if it is not set
+  ##
+  ## It is also possible to create and manage the certificates outside of this helm chart
+  ## Please see README.md for more information
+  # - name: odoo.local-tls
+  #   key:
+  #   certificate:
+
+## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: true
+  ## odoo data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  storageClass: "fast-disks"
+  accessMode: ReadWriteOnce
+  size: 8Gi
+
+## Configure resource requests and limits
+## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+##
+resources:
+  requests:
+    memory: 512Mi
+    cpu: 300m
+
+## Configure extra options for liveness and readiness probes
+## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes)
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 300
+  periodSeconds: 30
+  timeoutSeconds: 5
+  failureThreshold: 100
+  successThreshold: 1
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1

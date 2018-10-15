@@ -1,0 +1,92 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "odoo.fullname" . }}
+  labels:
+    app: {{ template "odoo.name" . }}
+    chart: {{ template "odoo.chart" . }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ template "odoo.name" . }}
+      release: "{{ .Release.Name }}"
+  template:
+    metadata:
+      labels:
+        app: {{ template "odoo.name" . }}
+        chart: {{ template "odoo.chart" . }}
+        release: {{ .Release.Name | quote }}
+    spec:
+      containers:
+      - name: {{ template "odoo.fullname" . }}
+        image: {{ template "odoo.image" . }}
+        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        env:
+        - name: DB_HOST
+          value: {{ template "odoo.postgresql.fullname" . }}
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "odoo.postgresql.fullname" . }}
+              key: postgres-password
+        - name: SSH_PRIVATE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: "ssh-private-key-deploy"
+              key: "deploy_key_NDP"
+        - name: SERVEUR_SSH
+          value: {{ .Values.git.server }}
+        - name: DEPOT_GIT
+          value: {{ template "odoo.repository1" . }}
+        - name: DEPOT_GIT2
+          value: {{ template "odoo.repository2" . }}
+        - name: DEPOT_GIT3
+          value: {{ template "odoo.repository3" . }}
+        - name: DEPOT_GIT4
+          value: {{ template "odoo.repository4" . }}
+        - name: WORKERS
+          value: {{ .Values.workers }}
+        ports:
+        - name: http
+          containerPort: 8069
+        - name: longpolling
+          containerPort: 8072
+        {{- if .Values.livenessProbe.enabled }}
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+          successThreshold: {{ .Values.livenessProbe.successThreshold }}
+          failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+        {{- end }}
+        {{- if .Values.readinessProbe.enabled }}
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+          successThreshold: {{ .Values.readinessProbe.successThreshold }}
+          failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+        {{- end }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - name: odoo-data
+          mountPath: /var/lib/odoo
+      volumes:
+      - name: odoo-data
+      {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "odoo.fullname" . }}
+      {{- else }}
+        emptyDir: {}
+      {{- end }}

@@ -1,0 +1,15 @@
+name: odoo-10
+version: 0.0.1
+appVersion: 10.0
+description: A suite of web based open source business apps.
+home: https://www.ndp-systemes.fr
+keywords:
+- odoo
+- crm
+- www
+- http
+- web
+maintainers:
+- name: NDP Systèmes
+  email: contact@ndp-systemes.fr
+engine: gotpl
