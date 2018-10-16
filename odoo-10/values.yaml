@@ -17,6 +17,8 @@ odoo:
   limit_time_cpu:
   ## Override to define a custom module to install
   module:
+  ## Override here to define a custom database
+  database:
 
 git:
   ## Git server where to fetch sources

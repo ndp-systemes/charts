@@ -54,6 +54,13 @@ Return the Odoo module to install
 {{- end -}}
 
 {{/*
+Return the Odoo database
+*/}}
+{{- define "odoo.database" -}}
+{{- default .Release.Name .Values.odoo.database | quote -}}
+{{- end -}}
+
+{{/*
 Return the ingress host name
 */}}
 {{- define "odoo.hostname" -}}

@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   odoo-10:
   - appVersion: "10"
-    created: 2018-10-16T17:39:30.401718663+02:00
+    created: 2018-10-16T17:47:03.058630382+02:00
     description: A suite of web based open source business apps.
-    digest: 20033c8ac9704785b375427b61b986527235bb827016d786f648a3f53815054d
+    digest: 56f57dfbf30b295179e0a5be4698662100114fd9304337c0985870b3c15c4116
     engine: gotpl
     home: https://www.ndp-systemes.fr
     keywords:
@@ -21,7 +21,7 @@ entries:
     - https://ndp-systemes.github.com/charts/odoo-10-0.0.4.tgz
     version: 0.0.4
   - appVersion: "10"
-    created: 2018-10-16T17:39:30.400780258+02:00
+    created: 2018-10-16T17:47:03.057669485+02:00
     description: A suite of web based open source business apps.
     digest: 2aa8480dd93aff662acc5ce6e96f6b8e842e63ea54c4b1e49c837dfa57bba051
     engine: gotpl
@@ -40,7 +40,7 @@ entries:
     - https://ndp-systemes.github.com/charts/odoo-10-0.0.3.tgz
     version: 0.0.3
   - appVersion: "10"
-    created: 2018-10-16T17:39:30.399868934+02:00
+    created: 2018-10-16T17:47:03.056711483+02:00
     description: A suite of web based open source business apps.
     digest: b76f8e7032bdbcd2ba57c27fd4e7196b06a34464096dc75ce370e5011dd8707c
     engine: gotpl
@@ -59,7 +59,7 @@ entries:
     - https://ndp-systemes.github.com/charts/odoo-10-0.0.2.tgz
     version: 0.0.2
   - appVersion: "10"
-    created: 2018-10-16T17:39:30.39892758+02:00
+    created: 2018-10-16T17:47:03.055761925+02:00
     description: A suite of web based open source business apps.
     digest: d53065a5d427f78d381e5ecb111c83eb739c53d437a2494a3412c487f54ada4d
     engine: gotpl
@@ -77,4 +77,4 @@ entries:
     urls:
     - https://ndp-systemes.github.com/charts/odoo-10-0.0.1.tgz
     version: 0.0.1
-generated: 2018-10-16T17:39:30.397818915+02:00
+generated: 2018-10-16T17:47:03.053912108+02:00

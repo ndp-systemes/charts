@@ -33,6 +33,8 @@ spec:
             secretKeyRef:
               name: {{ template "odoo.postgresql.fullname" . }}
               key: postgres-password
+        - name: DATABASE
+          value: {{ template "odoo.database" . }}
         - name: SSH_PRIVATE_KEY
           valueFrom:
             secretKeyRef:
