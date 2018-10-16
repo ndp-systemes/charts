@@ -57,8 +57,7 @@ Return the ingress host name
 Return the odoo project source
 */}}
 {{- define "odoo.repository1" -}}
-{{- $default_branch := printf "%s-%s-production" .Values.image.tag .Release.Name -}}
-{{- $branch := default $default_branch .Values.git.branch -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
 {{- $proj := default "" .Values.git.depProject1 -}}
 {{- $default_repo := printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Release.Name -}}
 {{- default $default_repo .Values.git.repo1 -}}
@@ -68,8 +67,7 @@ Return the odoo project source
 Return the first dependency repo
 */}}
 {{- define "odoo.repository2" -}}
-{{- $default_branch := printf "%s-%s-production" .Values.image.tag .Release.Name -}}
-{{- $branch := default $default_branch .Values.git.branch -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
 {{- $proj := default "" .Values.git.depProject1 -}}
 {{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject1) -}}
 {{- default $default_repo .Values.git.repo2 -}}
@@ -79,8 +77,7 @@ Return the first dependency repo
 Return the second dependency repo
 */}}
 {{- define "odoo.repository3" -}}
-{{- $default_branch := printf "%s-%s-production" .Values.image.tag .Release.Name -}}
-{{- $branch := default $default_branch .Values.git.branch -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
 {{- $proj := default "" .Values.git.depProject2 -}}
 {{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject2) -}}
 {{- default $default_repo .Values.git.repo3 -}}
@@ -90,8 +87,7 @@ Return the second dependency repo
 Return the third dependency repo
 */}}
 {{- define "odoo.repository4" -}}
-{{- $default_branch := printf "%s-%s-production" .Values.image.tag .Release.Name -}}
-{{- $branch := default $default_branch .Values.git.branch -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
 {{- $proj := default "" .Values.git.depProject3 -}}
 {{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject3) -}}
 {{- default $default_repo .Values.git.repo4 -}}
