@@ -51,9 +51,9 @@ spec:
         - name: DEPOT_GIT4
           value: {{ template "odoo.repository4" . }}
         - name: WORKERS
-          value: {{ .Values.odoo.workers }}
+          value: {{ .Values.odoo.workers | quote }}
         - name: HELM_RELEASE_VERSION
-          value: {{ .Release.Revision }}
+          value: {{ .Release.Revision | quote }}
         {{- if .Release.IsUpgrade }}
         - name: UPDATE
           value: "base"
