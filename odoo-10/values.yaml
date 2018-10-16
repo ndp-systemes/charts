@@ -15,7 +15,8 @@ odoo:
   workers: 3
   ## Set to have none default value
   limit_time_cpu:
-
+  ## Override to define a custom module to install
+  module:
 
 git:
   ## Git server where to fetch sources

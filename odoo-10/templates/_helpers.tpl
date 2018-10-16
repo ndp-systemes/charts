@@ -46,6 +46,14 @@ Return the PVC storage class name
 {{- end -}}
 
 {{/*
+Return the Odoo module to install
+*/}}
+{{- define "odoo.installModule" -}}
+{{- $default_module := printf "%s_erp" .Release.Name -}}
+{{- default $default_module .Values.odoo.module | quote -}}
+{{- end -}}
+
+{{/*
 Return the ingress host name
 */}}
 {{- define "odoo.hostname" -}}

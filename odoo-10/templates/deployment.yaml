@@ -49,7 +49,17 @@ spec:
         - name: DEPOT_GIT4
           value: {{ template "odoo.repository4" . }}
         - name: WORKERS
-          value: {{ .Values.workers }}
+          value: {{ .Values.odoo.workers }}
+        - name: HELM_RELEASE_VERSION
+          value: {{ .Release.Revision }}
+        {{- if .Release.IsUpgrade }}
+        - name: UPDATE
+          value: "base"
+        {{- end }}
+        {{- if .Release.IsInstall }}
+        - name: INSTALL
+          value: {{ template "odoo.installModule" . }}
+        {{- end }}
         ports:
         - name: http
           containerPort: 8069
