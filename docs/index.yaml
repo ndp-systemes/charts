@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   odoo-10:
   - appVersion: "10"
-    created: 2018-10-17T19:02:37.757258691+02:00
+    created: 2018-10-17T19:07:53.200785833+02:00
     description: A suite of web based open source business apps.
-    digest: ee7c7ae9eee24242657f5d0e805b4e4c424a9631d0356d3658eec3a8bf391c5e
+    digest: 13307251098a146e61a5378adf5e60d36c3e0869c384dd4099172edba1972f06
     engine: gotpl
     home: https://www.ndp-systemes.fr
     keywords:
@@ -21,7 +21,7 @@ entries:
     - https://ndp-systemes.github.com/charts/odoo-10-0.0.5.tgz
     version: 0.0.5
   - appVersion: "10"
-    created: 2018-10-17T19:02:37.756320398+02:00
+    created: 2018-10-17T19:07:53.199792073+02:00
     description: A suite of web based open source business apps.
     digest: c53ee6996fdcf4778f751f96370a2f369c96aed60b71b48897660973b7110f6a
     engine: gotpl
@@ -40,7 +40,7 @@ entries:
     - https://ndp-systemes.github.com/charts/odoo-10-0.0.4.tgz
     version: 0.0.4
   - appVersion: "10"
-    created: 2018-10-17T19:02:37.755387365+02:00
+    created: 2018-10-17T19:07:53.19877774+02:00
     description: A suite of web based open source business apps.
     digest: 2aa8480dd93aff662acc5ce6e96f6b8e842e63ea54c4b1e49c837dfa57bba051
     engine: gotpl
@@ -59,7 +59,7 @@ entries:
     - https://ndp-systemes.github.com/charts/odoo-10-0.0.3.tgz
     version: 0.0.3
   - appVersion: "10"
-    created: 2018-10-17T19:02:37.754491497+02:00
+    created: 2018-10-17T19:07:53.197852923+02:00
     description: A suite of web based open source business apps.
     digest: b76f8e7032bdbcd2ba57c27fd4e7196b06a34464096dc75ce370e5011dd8707c
     engine: gotpl
@@ -78,7 +78,7 @@ entries:
     - https://ndp-systemes.github.com/charts/odoo-10-0.0.2.tgz
     version: 0.0.2
   - appVersion: "10"
-    created: 2018-10-17T19:02:37.753588967+02:00
+    created: 2018-10-17T19:07:53.19691011+02:00
     description: A suite of web based open source business apps.
     digest: d53065a5d427f78d381e5ecb111c83eb739c53d437a2494a3412c487f54ada4d
     engine: gotpl
@@ -98,7 +98,7 @@ entries:
     version: 0.0.1
   postgresql:
   - appVersion: 9.6.2
-    created: 2018-10-17T19:02:37.757794739+02:00
+    created: 2018-10-17T19:07:53.201361672+02:00
     description: Object-relational database management system (ORDBMS) with an emphasis
       on extensibility and on standards-compliance.
     digest: 5bb570e5511ae81a2f2aa46cf26118c9778da53a0ebbd413e64a35c2d9378b09
@@ -117,4 +117,4 @@ entries:
     urls:
     - https://ndp-systemes.github.com/charts/postgresql-0.0.1.tgz
     version: 0.0.1
-generated: 2018-10-17T19:02:37.752517037+02:00
+generated: 2018-10-17T19:07:53.195766844+02:00
