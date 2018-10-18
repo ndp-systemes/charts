@@ -20,10 +20,14 @@ spec:
   - host: {{ template "odoo.hostname" . }}
     http:
       paths:
-        - path: {{ default "/" .path }}
+        - path: "/"
           backend:
             serviceName: {{ template "odoo.fullname" . }}
             servicePort: http
+        - path: "/longpolling"
+          backend:
+            serviceName: {{ template "odoo.fullname" . }}
+            servicePort: longpolling
 {{- if .tls }}
   tls:
   - hosts:

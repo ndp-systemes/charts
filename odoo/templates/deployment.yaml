@@ -83,7 +83,7 @@ spec:
           value: {{ .Values.odoo.unaccent | quote }}
         {{- if .Release.IsUpgrade }}
         - name: UPDATE
-          value: "base"
+          value: "all"
         {{- end }}
         {{- if .Release.IsInstall }}
         - name: INSTALL

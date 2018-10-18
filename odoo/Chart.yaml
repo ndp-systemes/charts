@@ -1,6 +1,5 @@
-name: odoo-10
-version: 0.0.10
-appVersion: 10.0
+name: odoo
+version: 0.0.11
 description: A suite of web based open source business apps.
 home: https://www.ndp-systemes.fr
 keywords:
