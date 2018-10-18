@@ -24,10 +24,17 @@ spec:
         image: {{ template "odoo.image" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         env:
+        - name: ADMIN_PASSWD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "odoo.fullname" . }}
+              key: "odoo-admin-password"
         - name: DB_HOST
           value: {{ template "odoo.postgresql.fullname" . }}
         - name: DB_PORT
           value: "5432"
+        - name: DB_USER
+          value: {{ .Values.postgresql.postgresUser | quote }}
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
@@ -52,10 +59,28 @@ spec:
           value: {{ template "odoo.repository4" . }}
         - name: WORKERS
           value: {{ .Values.odoo.workers | quote }}
+        - name: LIMIT_TIME_CPU
+          value: {{ .Values.odoo.limitTimeCPU | quote }}
+        - name: LIMIT_TIME_REAL
+          value: {{ .Values.odoo.limitTimeReal | quote }}
+        - name: LIMIT_MEMORY_SOFT
+          value: {{ .Values.odoo.limitMemorySoft | quote }}
+        - name: LIMIT_MEMORY_HARD
+          value: {{ .Values.odoo.limitMemoryHard | quote }}
         - name: HELM_RELEASE_VERSION
           value: {{ .Release.Revision | quote }}
         - name: WITHOUT_DEMO
-          value: {{ .Values.odoo.withoutDemo }}
+          value: {{ .Values.odoo.withoutDemo | quote }}
+        - name: CMD_LINE_PARAMS
+          value: {{ .Values.odoo.cmdLineParams | quote }}
+        - name: TEST_ENABLE
+          value: {{ .Values.odoo.testEnable | quote }}
+        - name: STOP_AFTER_INIT
+          value: {{ .Values.odoo.stopAfterInit | quote }}
+        - name: DB_FILTER
+          value: {{ .Values.odoo.dbFilter | quote }}
+        - name: UNACCENT
+          value: {{ .Values.odoo.unaccent | quote }}
         {{- if .Release.IsUpgrade }}
         - name: UPDATE
           value: "base"
