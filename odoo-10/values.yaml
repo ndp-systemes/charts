@@ -52,6 +52,8 @@ postgresql:
   ##
   # postgresPassword:
 
+  existingSecret: 'secret'
+
   ## Enable persistence using Persistent Volume Claims
   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
   ##
@@ -67,6 +69,11 @@ postgresql:
     storageClass: "fast-disks"
     accessMode: ReadWriteOnce
     size: 20Gi
+
+    ## A manually managed Persistent Volume and Claim
+    ## Requires persistence.enabled: true
+    ## If defined, PVC must be created manually before volume will be bound
+    existingClaim:
 
 ## Kubernetes svc configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
@@ -145,6 +152,11 @@ persistence:
   storageClass: "fast-disks"
   accessMode: ReadWriteOnce
   size: 8Gi
+
+  ## A manually managed Persistent Volume and Claim
+  ## Requires persistence.enabled: true
+  ## If defined, PVC must be created manually before volume will be bound
+  existingClaim:
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/

@@ -107,3 +107,10 @@ Return the third dependency repo
 {{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject3) -}}
 {{- default $default_repo .Values.git.repo4 -}}
 {{- end -}}
+
+{{/*
+Override postgresql secret to use ours
+*/}}
+{{- define "postgresql.secretName" -}}
+{{ include "postgresql.fullname" . }}
+{{- end -}}
