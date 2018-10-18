@@ -19,6 +19,8 @@ odoo:
   module:
   ## Override here to define a custom database
   database:
+  ## Set to "False" to hav demo data loaded
+  withoutDemo: "all"
 
 git:
   ## Git server where to fetch sources

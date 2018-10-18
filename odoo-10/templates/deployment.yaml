@@ -54,6 +54,8 @@ spec:
           value: {{ .Values.odoo.workers | quote }}
         - name: HELM_RELEASE_VERSION
           value: {{ .Release.Revision | quote }}
+        - name: WITHOUT_DEMO
+          value: {{ .Values.odoo.withoutDemo }}
         {{- if .Release.IsUpgrade }}
         - name: UPDATE
           value: "base"
