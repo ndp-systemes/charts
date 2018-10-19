@@ -49,7 +49,8 @@ Return the PVC storage class name
 Return the Odoo module to install
 */}}
 {{- define "odoo.installModule" -}}
-{{- $default_module := printf "%s_erp" .Release.Name -}}
+{{- $proj := default .Release.Name .Values.git.project -}}
+{{- $default_module := printf "%s_erp" $proj -}}
 {{- default $default_module .Values.odoo.module | quote -}}
 {{- end -}}
 
