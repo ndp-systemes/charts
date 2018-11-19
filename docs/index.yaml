@@ -1,7 +1,7 @@
 apiVersion: v1
 entries:
   odoo:
-  - created: 2018-11-19T15:15:38.397603974+01:00
+  - created: 2018-11-19T15:23:33.199143297+01:00
     description: A suite of web based open source business apps.
     digest: af83a1bdbf84a15a9affe1d25601b4de24b9eecc242a2c86619e6eb3a7cea10c
     engine: gotpl
@@ -19,4 +19,22 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.14.tgz
     version: 0.0.14
-generated: 2018-11-19T15:15:38.396455933+01:00
+  - created: 2018-11-19T15:23:33.198156744+01:00
+    description: A suite of web based open source business apps.
+    digest: cfde0c33ed29860a7ca2c44a447661d21231336b00b60499c47cdff8c8d23b20
+    engine: gotpl
+    home: https://www.ndp-systemes.fr
+    keywords:
+    - odoo
+    - crm
+    - www
+    - http
+    - web
+    maintainers:
+    - email: contact@ndp-systemes.fr
+      name: NDP Systèmes
+    name: odoo
+    urls:
+    - https://ndp-systemes.github.io/charts/odoo-0.0.13.tgz
+    version: 0.0.13
+generated: 2018-11-19T15:23:33.196988083+01:00
