@@ -83,7 +83,7 @@ spec:
           value: {{ .Values.odoo.unaccent | quote }}
         {{- if .Release.IsUpgrade }}
         - name: UPDATE
-          value: "all"
+          value: {{ .Values.odoo.updateModule | default "all" | quote }}
         {{- end }}
         {{- if .Release.IsInstall }}
         - name: INSTALL
