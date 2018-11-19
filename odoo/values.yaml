@@ -28,7 +28,11 @@ odoo:
   limitMemorySoft:
   limitMemoryHard:
   ## Override to define a custom module to install
+  ## Default to "<RELEASE_NAME>_erp"
   module:
+  ## Override to specify the module to update when upgrading
+  ## Defaults to 'all'
+  updateModule:
   ## Override here to define a custom database
   database:
   ## Set to "False" string to hav demo data loaded
