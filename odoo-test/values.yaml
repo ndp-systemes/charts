@@ -1,0 +1,64 @@
+## NDP Systèmes Odoo image version
+## ref: https://hub.docker.com/r/bitnami/odoo/tags/
+##
+image:
+  registry: docker.io
+  repository: ndpsystemes/odoo
+  tag: "10.0"
+  ## Specify a imagePullPolicy
+  ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
+  ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+  ##
+  pullPolicy: Always
+
+## Set host, user and password to connect to the test database
+postgresql:
+  host:
+  user:
+  password:
+
+odoo:
+  ## Override to define a custom module to install
+  ## Default to "<RELEASE_NAME>_erp"
+  module:
+  ## Override here to define a custom database
+  database:
+  ## Set to "False" string to hav demo data loaded
+  withoutDemo: "False"
+  ## Additional command line params to send to odoo (string)
+  cmdLineParams:
+  ## Set to "True" string for testing Odoo
+  testEnable: "True"
+  ## Set to "True" string for stopping after DB initialization
+  ## (Useful mainly for tests)
+  stopAfterInit: "True"
+  ## Regex for allowed databases
+  dbFilter: ".*"
+  ## Set to False if you do not want unaccentuated searches
+  unaccent: "True"
+  ## Set log level
+  logLevel: "info"
+
+git:
+  ## Git server where to fetch sources
+  server: gitlab.ndp-systemes.fr
+
+  group: odoo-addons
+
+  ## Set to override
+  ## Defaults to tag
+  branch:
+
+  ## Git project to clone.
+  ## Defaults to the release name if not specified
+  project:
+  ## Dependancies project names
+  depProject1: common-modules
+  depProject2: community-addons
+  depProject3:
+
+  ## Set to override project git repositories.
+  repo1:
+  repo2:
+  repo3:
+  repo4:

@@ -1,13 +1,10 @@
-name: odoo
-version: 0.0.15
-description: A suite of web based open source business apps.
+name: odoo-test
+version: 0.0.1
+description: A chart to run Odoo test jobs
 home: https://www.ndp-systemes.fr
 keywords:
 - odoo
-- crm
-- www
-- http
-- web
+- test
 maintainers:
 - name: NDP Systèmes
   email: contact@ndp-systemes.fr

@@ -7,7 +7,7 @@ Odoo Apps can be used as stand-alone applications, but they also integrate seaml
 ## TL;DR;
 
 ```console
-$ helm install ndpsystemes/odoo
+$ helm install ndpsystemes/odoo-test
 ```
 
 ## Introduction
