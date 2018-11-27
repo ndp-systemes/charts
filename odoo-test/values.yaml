@@ -14,8 +14,8 @@ image:
 ## Set host, user and password to connect to the test database
 postgresql:
   host:
-  user:
-  password:
+  postgresUser:
+  postgresPassword:
 
 odoo:
   ## Override to define a custom module to install
