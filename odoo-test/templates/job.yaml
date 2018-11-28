@@ -83,3 +83,6 @@ spec:
         - name: INSTALL
           value: {{ template "odoo.installModule" . }}
         {{- end }}
+{{- if .Values.extraEnv }}
+{{ toYaml .Values.extraEnv | indent 8 }}
+{{- end }}
