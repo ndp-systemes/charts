@@ -16,6 +16,10 @@ spec:
         chart: {{ template "odoo.chart" . }}
         release: {{ .Release.Name | quote }}
     spec:
+      {{- if .Values.affinity }}
+      affinity:
+{{ toYaml .Values.affinity | indent 8 }}
+      {{- end }}
       restartPolicy: "Never"
       containers:
       - name: {{ template "odoo.fullname" . }}
