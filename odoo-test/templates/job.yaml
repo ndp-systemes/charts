@@ -16,10 +16,18 @@ spec:
         chart: {{ template "odoo.chart" . }}
         release: {{ .Release.Name | quote }}
     spec:
-      {{- if .Values.affinity }}
+{{- if .Values.affinityRelease }}
       affinity:
-{{ toYaml .Values.affinity | indent 8 }}
-      {{- end }}
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: release
+                    operator: In
+                    values:
+                      - {{ .Values.affinityRelease }}
+              topologyKey: kubernetes.io/hostname
+{{- end }}
       restartPolicy: "Never"
       containers:
       - name: {{ template "odoo.fullname" . }}
