@@ -19,6 +19,18 @@ spec:
         chart: {{ template "odoo.chart" . }}
         release: {{ .Release.Name | quote }}
     spec:
+      {{- if .Values.sameNode }}
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: release
+                    operator: In
+                    values:
+                      - {{ .Release.Name | quote }}
+              topologyKey: kubernetes.io/hostname
+      {{- end }}
       containers:
       - name: {{ template "odoo.fullname" . }}
         image: {{ template "odoo.image" . }}
@@ -90,6 +102,9 @@ spec:
         {{- if .Release.IsInstall }}
         - name: INSTALL
           value: {{ template "odoo.installModule" . }}
+        {{- end }}
+        {{- if .Values.extraEnv }}
+{{ toYaml .Values.extraEnv | indent 8 }}
         {{- end }}
         ports:
         - name: http
