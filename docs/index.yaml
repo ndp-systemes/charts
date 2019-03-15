@@ -1,7 +1,25 @@
 apiVersion: v1
 entries:
   odoo:
-  - created: 2019-03-06T10:10:34.50621517+01:00
+  - created: 2019-03-15T09:49:55.845712934+01:00
+    description: A suite of web based open source business apps.
+    digest: 833db86abd29f7a98715c7e5c258e0019df53861a34729cb3072ae3b5fe688e4
+    engine: gotpl
+    home: https://www.ndp-systemes.fr
+    keywords:
+    - odoo
+    - crm
+    - www
+    - http
+    - web
+    maintainers:
+    - email: contact@ndp-systemes.fr
+      name: NDP Systèmes
+    name: odoo
+    urls:
+    - https://ndp-systemes.github.io/charts/odoo-0.0.18.tgz
+    version: 0.0.18
+  - created: 2019-03-15T09:49:55.843731273+01:00
     description: A suite of web based open source business apps.
     digest: bf8a06c637b0f187ac3883d801ac928475b15e3ea39c6c34891b9aadeb5acafa
     engine: gotpl
@@ -19,7 +37,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.17.tgz
     version: 0.0.17
-  - created: 2019-03-06T10:10:34.505181422+01:00
+  - created: 2019-03-15T09:49:55.842828406+01:00
     description: A suite of web based open source business apps.
     digest: 585345eede822a9fde4474187569fe58ca1bb9f2d21ecd4191ec1d475cfb4b36
     engine: gotpl
@@ -37,7 +55,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.16.tgz
     version: 0.0.16
-  - created: 2019-03-06T10:10:34.504282402+01:00
+  - created: 2019-03-15T09:49:55.84186533+01:00
     description: A suite of web based open source business apps.
     digest: caee328f6d5a54c4a4afc5d03dc9d17e6f77032876c5c0e729a57bb7117cb711
     engine: gotpl
@@ -55,7 +73,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.15.tgz
     version: 0.0.15
-  - created: 2019-03-06T10:10:34.503425494+01:00
+  - created: 2019-03-15T09:49:55.840870333+01:00
     description: A suite of web based open source business apps.
     digest: af83a1bdbf84a15a9affe1d25601b4de24b9eecc242a2c86619e6eb3a7cea10c
     engine: gotpl
@@ -73,7 +91,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.14.tgz
     version: 0.0.14
-  - created: 2019-03-06T10:10:34.502576314+01:00
+  - created: 2019-03-15T09:49:55.839876678+01:00
     description: A suite of web based open source business apps.
     digest: cfde0c33ed29860a7ca2c44a447661d21231336b00b60499c47cdff8c8d23b20
     engine: gotpl
@@ -92,7 +110,22 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.0.13.tgz
     version: 0.0.13
   odoo-test:
-  - created: 2019-03-06T10:10:34.508087631+01:00
+  - created: 2019-03-15T09:49:55.847326764+01:00
+    description: A chart to run Odoo test jobs
+    digest: 8ae7a30f3af6a3c3ad0e341a25f924039527dfe2306b9cd4647d51dd2a9bb20b
+    engine: gotpl
+    home: https://www.ndp-systemes.fr
+    keywords:
+    - odoo
+    - test
+    maintainers:
+    - email: contact@ndp-systemes.fr
+      name: NDP Systèmes
+    name: odoo-test
+    urls:
+    - https://ndp-systemes.github.io/charts/odoo-test-0.0.5.tgz
+    version: 0.0.5
+  - created: 2019-03-15T09:49:55.847001596+01:00
     description: A chart to run Odoo test jobs
     digest: c191435ac62637fe352a41ed524f698d97c2b810534dae4dce3bf205c7014c7c
     engine: gotpl
@@ -107,7 +140,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.4.tgz
     version: 0.0.4
-  - created: 2019-03-06T10:10:34.507766678+01:00
+  - created: 2019-03-15T09:49:55.846681601+01:00
     description: A chart to run Odoo test jobs
     digest: 7c70bbe894bc722d1b31299f7c277e283dd4ed478ee259bea370b8150783abfb
     engine: gotpl
@@ -122,7 +155,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.3.tgz
     version: 0.0.3
-  - created: 2019-03-06T10:10:34.507437965+01:00
+  - created: 2019-03-15T09:49:55.846365156+01:00
     description: A chart to run Odoo test jobs
     digest: 72fcb92b119bacf40feb8d98bfd94fed244ea092d188e968fb5656dd667450fc
     engine: gotpl
@@ -137,7 +170,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.2.tgz
     version: 0.0.2
-  - created: 2019-03-06T10:10:34.506980243+01:00
+  - created: 2019-03-15T09:49:55.84603816+01:00
     description: A chart to run Odoo test jobs
     digest: 6f0c7a167e4d0854b78a2f12a84e2282c6790daf3119b649783429ee718a699e
     engine: gotpl
@@ -152,4 +185,4 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.1.tgz
     version: 0.0.1
-generated: 2019-03-06T10:10:34.501581498+01:00
+generated: 2019-03-15T09:49:55.838726856+01:00
