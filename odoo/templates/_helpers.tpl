@@ -110,6 +110,66 @@ Return the third dependency repo
 {{- end -}}
 
 {{/*
+Return the fourth dependency repo
+*/}}
+{{- define "odoo.repository5" -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
+{{- $proj := default "" .Values.git.depProject4 -}}
+{{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject4) -}}
+{{- default $default_repo .Values.git.repo5 -}}
+{{- end -}}
+
+{{/*
+Return the fifth dependency repo
+*/}}
+{{- define "odoo.repository6" -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
+{{- $proj := default "" .Values.git.depProject5 -}}
+{{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject5) -}}
+{{- default $default_repo .Values.git.repo6 -}}
+{{- end -}}
+
+{{/*
+Return the sixth dependency repo
+*/}}
+{{- define "odoo.repository7" -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
+{{- $proj := default "" .Values.git.depProject6 -}}
+{{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject6) -}}
+{{- default $default_repo .Values.git.repo7 -}}
+{{- end -}}
+
+{{/*
+Return the seventh dependency repo
+*/}}
+{{- define "odoo.repository8" -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
+{{- $proj := default "" .Values.git.depProject7 -}}
+{{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject7) -}}
+{{- default $default_repo .Values.git.repo8 -}}
+{{- end -}}
+
+{{/*
+Return the eighth dependency repo
+*/}}
+{{- define "odoo.repository9" -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
+{{- $proj := default "" .Values.git.depProject8 -}}
+{{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject8) -}}
+{{- default $default_repo .Values.git.repo9 -}}
+{{- end -}}
+
+{{/*
+Return the ninth dependency repo
+*/}}
+{{- define "odoo.repository10" -}}
+{{- $branch := default .Values.image.tag .Values.git.branch -}}
+{{- $proj := default "" .Values.git.depProject9 -}}
+{{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group .Values.git.depProject9) -}}
+{{- default $default_repo .Values.git.repo10 -}}
+{{- end -}}
+
+{{/*
 Override postgresql secret to use ours
 */}}
 {{- define "postgresql.secretName" -}}

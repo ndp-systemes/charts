@@ -71,6 +71,18 @@ spec:
           value: {{ template "odoo.repository3" . }}
         - name: DEPOT_GIT4
           value: {{ template "odoo.repository4" . }}
+        - name: DEPOT_GIT5
+          value: {{ template "odoo.repository5" . }}
+        - name: DEPOT_GIT6
+          value: {{ template "odoo.repository6" . }}
+        - name: DEPOT_GIT7
+          value: {{ template "odoo.repository7" . }}
+        - name: DEPOT_GIT8
+          value: {{ template "odoo.repository8" . }}
+        - name: DEPOT_GIT9
+          value: {{ template "odoo.repository9" . }}
+        - name: DEPOT_GIT10
+          value: {{ template "odoo.repository10" . }}
         - name: WORKERS
           value: {{ .Values.odoo.workers | quote }}
         - name: LIMIT_TIME_CPU

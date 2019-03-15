@@ -70,12 +70,24 @@ git:
   depProject1: common-modules
   depProject2: community-addons
   depProject3:
+  depProject4:
+  depProject5:
+  depProject6:
+  depProject7:
+  depProject8:
+  depProject9:
 
   ## Set to override project git repositories.
   repo1:
   repo2:
   repo3:
   repo4:
+  repo5:
+  repo6:
+  repo7:
+  repo8:
+  repo9:
+  repo10:
 
 ##
 ## PostgreSQL chart configuration
