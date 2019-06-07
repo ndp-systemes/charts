@@ -51,6 +51,11 @@ spec:
             secretKeyRef:
               name: "ssh-private-key-deploy"
               key: "deploy_key_NDP"
+        - name: GITLAB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: "ssh-private-key-deploy"
+              key: "gitlab_token"
         - name: SERVEUR_SSH
           value: {{ .Values.git.server }}
         - name: DEPOT_GIT

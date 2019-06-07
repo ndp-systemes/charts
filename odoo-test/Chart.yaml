@@ -1,5 +1,5 @@
 name: odoo-test
-version: 0.0.5
+version: 0.0.6
 description: A chart to run Odoo test jobs
 home: https://www.ndp-systemes.fr
 keywords:
