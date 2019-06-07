@@ -57,13 +57,15 @@
 {{ include "gitlab-runner.cache" . }}
 {{- end }}
 {{- if .Values.envSecrets -}}
-{{ range .Values.envSecrets }}
+{{- range .Values.envSecrets }}
 - name: {{ .name }}
   valueFrom:
     secretKeyRef:
       name: {{ .secret }}
       key: {{ .key }}
 {{- end }}
+- name: RUNNER_ENV
+  value: "{{ range .Values.envSecrets }}{{ .name }}=$({{ .name }}) {{ end }}"
 {{- end }}
 {{- if .Values.envVars -}}
 {{ range .Values.envVars }}
