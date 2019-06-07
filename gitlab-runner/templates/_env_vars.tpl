@@ -65,7 +65,7 @@
       key: {{ .key }}
 {{- end }}
 - name: RUNNER_ENV
-  value: "{{ range .Values.envSecrets }}{{ .name }}=$({{ .name }}) {{ end }}"
+  value: "{{ range .Values.envSecrets }}{{ .name }}=$({{ .name }}),{{ end }}"
 {{- end }}
 {{- if .Values.envVars -}}
 {{ range .Values.envVars }}
