@@ -175,3 +175,10 @@ Override postgresql secret to use ours
 {{- define "postgresql.secretName" -}}
 {{ include "postgresql.fullname" . }}
 {{- end -}}
+
+{{/*
+Override postgresql Initdb CM
+*/}}
+{{- define "postgresql.initdbScriptsCM" -}}
+{{- printf "%s-initscripts" (include "odoo.postgresql.fullname" .) }}
+{{- end }}

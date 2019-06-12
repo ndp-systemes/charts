@@ -48,12 +48,12 @@ spec:
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
-          value: {{ .Values.postgresql.postgresUser | quote }}
+          value: {{ .Values.postgresql.postgresqlUsername | quote }}
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ template "odoo.postgresql.fullname" . }}
-              key: postgres-password
+              key: postgresql-password
         - name: DATABASE
           value: {{ template "odoo.database" . }}
         - name: SSH_PRIVATE_KEY

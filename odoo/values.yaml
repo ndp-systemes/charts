@@ -94,14 +94,17 @@ git:
 ##
 postgresql:
 
-  postgresUser: "odoo"
+  postgresqlUsername: "odoo"
 
   ## PostgreSQL password
   ## ref: https://hub.docker.com/_/postgres/
   ##
-  # postgresPassword:
+  # postgresqlPassword:
 
   existingSecret: 'secret'
+
+  ## Laisser à true
+  initdbScriptsConfigMap: "true"
 
   ## Enable persistence using Persistent Volume Claims
   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
@@ -115,9 +118,9 @@ postgresql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "fast-disks"
+    storageClass: "cinder-high-speed"
     accessMode: ReadWriteOnce
-    size: 20Gi
+    size: 8Gi
 
     ## A manually managed Persistent Volume and Claim
     ## Requires persistence.enabled: true
@@ -149,7 +152,7 @@ ingress:
   ## Leave empty to have default name
   name:
   ## Default domain for ingress
-  domain: test.ndp-systemes.fr
+  domain: tests.ndp-systemes.fr
   ## Set to true to enable ingress record generation
   enabled: true
 
@@ -198,8 +201,8 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "fast-disks"
-  accessMode: ReadWriteOnce
+  storageClass: "nfs"
+  accessMode: ReadWriteMany
   size: 8Gi
 
   ## A manually managed Persistent Volume and Claim
