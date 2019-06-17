@@ -48,7 +48,7 @@ spec:
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
-          value: {{ .Values.postgresql.postgresqlUsername | quote }}
+          value: {{ .Values.postgresql.dbUser | quote }}
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
@@ -109,11 +109,11 @@ spec:
           value: {{ .Values.odoo.logLevel | default "info" | quote }}
         - name: UNACCENT
           value: {{ .Values.odoo.unaccent | quote }}
-        {{- if .Release.IsUpgrade }}
+        {{- if or .Release.IsUpgrade (and .Values.postgresql.dumpPath .Values.odoo.upgradeOnInit) }}
         - name: UPDATE
           value: {{ .Values.odoo.updateModule | default "all" | quote }}
         {{- end }}
-        {{- if .Release.IsInstall }}
+        {{- if and .Release.IsInstall (not .Values.postgresql.dumpPath) }}
         - name: INSTALL
           value: {{ template "odoo.installModule" . }}
         {{- end }}

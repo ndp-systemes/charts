@@ -12,6 +12,9 @@ image:
   pullPolicy: Always
 
 odoo:
+  ## If postgresql.dumpPath is specified, set to true to upgrade the database after init.
+  upgradeOnInit: false
+
   ## By default Odoo configuration will not be touched during upgrade
   ## Set reloadConfig to "true" to have all following options reset
   reloadConfig: false
@@ -94,7 +97,11 @@ git:
 ##
 postgresql:
 
-  postgresqlUsername: "odoo"
+  ## Specify a path to a PG dump file to load
+  dumpPath:
+
+  ## DB User for Odoo
+  dbUser: "odoo"
 
   ## PostgreSQL password
   ## ref: https://hub.docker.com/_/postgres/
@@ -126,6 +133,15 @@ postgresql:
     ## Requires persistence.enabled: true
     ## If defined, PVC must be created manually before volume will be bound
     existingClaim:
+
+  master:
+    extraVolumeMounts:
+      - name: dumps
+        mountPath: /dumps
+    extraVolumes:
+      - name: dumps
+        persistentVolumeClaim:
+          claimName: "dumps"
 
 ## Kubernetes svc configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
