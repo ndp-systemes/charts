@@ -14,8 +14,8 @@ data:
     echo "Creating user {{ .Values.postgresql.dbUser }}"
     psql -c "DROP USER IF EXISTS {{ .Values.postgresql.dbUser }}; CREATE USER {{ .Values.postgresql.dbUser }} WITH SUPERUSER PASSWORD '$(echo $POSTGRES_PASSWORD)';"
     echo "Creating {{ template "odoo.database" . }}"
-    psql -c "DROP DATABASE IF EXISTS "{{ template "odoo.database" . }}";"
-    psql -c "CREATE DATABASE "{{ template "odoo.database" . }}" WITH OWNER={{ .Values.postgresql.dbUser }};"
+    psql -c "DROP DATABASE IF EXISTS \"{{ template "odoo.database" . }}\";"
+    psql -c "CREATE DATABASE \"{{ template "odoo.database" . }}\" WITH OWNER={{ .Values.postgresql.dbUser }};"
     echo "Checking if a dump must be loaded..."
     {{- if .Values.postgresql.dumpPath }}
     echo "Found a dump at {{ .Values.postgresql.dumpPath }} to load"
