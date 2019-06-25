@@ -168,7 +168,7 @@ ingress:
   ## Leave empty to have default name
   name:
   ## Default domain for ingress
-  domain: tests.ndp-systemes.fr
+  domain: test.ndp-systemes.fr
   ## Set to true to enable ingress record generation
   enabled: true
 
