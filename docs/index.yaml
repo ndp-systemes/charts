@@ -2,7 +2,28 @@ apiVersion: v1
 entries:
   gitlab-runner:
   - appVersion: 11.11.0-rc1
-    created: 2019-06-25T11:05:51.909155949+02:00
+    created: "2019-07-03T21:31:59.707893848+02:00"
+    description: GitLab Runner
+    digest: f1d5ce3fd850ba581aa223989b13c4aeab3af8f4fd5f1da80c4881de4bf28c79
+    icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
+    keywords:
+    - git
+    - ci
+    - deploy
+    maintainers:
+    - email: support@gitlab.com
+      name: GitLab Inc.
+    - email: dj@gitlab.com
+      name: DJ Mountney
+    name: gitlab-runner
+    sources:
+    - https://hub.docker.com/r/gitlab/gitlab-runner/
+    - https://docs.gitlab.com/runner/
+    urls:
+    - https://ndp-systemes.github.io/charts/gitlab-runner-0.0.5.tgz
+    version: 0.0.5
+  - appVersion: 11.11.0-rc1
+    created: "2019-07-03T21:31:59.706032407+02:00"
     description: GitLab Runner
     digest: 1d03a52c2b7b27ef2873b03d82c50133d1059260585be9f56f70c389c8d4b063
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -23,7 +44,7 @@ entries:
     - https://ndp-systemes.github.io/charts/gitlab-runner-0.0.4.tgz
     version: 0.0.4
   - appVersion: 11.11.0-rc1
-    created: 2019-06-25T11:05:51.908375388+02:00
+    created: "2019-07-03T21:31:59.704154908+02:00"
     description: GitLab Runner
     digest: 6f1bda192065d5d247fe2bd563d8a0d4f46b9ff33f8cde6d60fca8eb25f5ddc0
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -44,7 +65,7 @@ entries:
     - https://ndp-systemes.github.io/charts/gitlab-runner-0.0.3.tgz
     version: 0.0.3
   - appVersion: 11.11.0-rc1
-    created: 2019-06-25T11:05:51.907659741+02:00
+    created: "2019-07-03T21:31:59.701889151+02:00"
     description: GitLab Runner
     digest: 58ec0bd67bf294a78a4860604080d32ce134c18b94779bc2802af3a0d75a2636
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -65,7 +86,7 @@ entries:
     - https://ndp-systemes.github.io/charts/gitlab-runner-0.0.2.tgz
     version: 0.0.2
   - appVersion: 11.11.0-rc1
-    created: 2019-06-25T11:05:51.906942596+02:00
+    created: "2019-07-03T21:31:59.698276065+02:00"
     description: GitLab Runner
     digest: f0fa5aea792a35ecf79e4e6f150a94dd8c6437fccabed6ceb42020f84fae5121
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -86,7 +107,7 @@ entries:
     - https://ndp-systemes.github.io/charts/gitlab-runner-0.0.1.tgz
     version: 0.0.1
   odoo:
-  - created: 2019-06-25T11:05:51.928610846+02:00
+  - created: "2019-07-03T21:31:59.743736735+02:00"
     description: A suite of web based open source business apps.
     digest: c4ef6755c1000375ee569c0d6b8d96d3807d60c4b27f09bbf8d3601298f4813e
     engine: gotpl
@@ -104,7 +125,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.1.4.tgz
     version: 0.1.4
-  - created: 2019-06-25T11:05:51.926808133+02:00
+  - created: "2019-07-03T21:31:59.741558162+02:00"
     description: A suite of web based open source business apps.
     digest: 08376526ec764ef6f65555c9526da3842da83ea66232de80b99bf57f40d15ef9
     engine: gotpl
@@ -122,7 +143,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.1.3.tgz
     version: 0.1.3
-  - created: 2019-06-25T11:05:51.925087472+02:00
+  - created: "2019-07-03T21:31:59.738847574+02:00"
     description: A suite of web based open source business apps.
     digest: a6de91402aaef0cce70a7088123b859162492409ece2606686225974e18af2e0
     engine: gotpl
@@ -140,7 +161,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.1.2.tgz
     version: 0.1.2
-  - created: 2019-06-25T11:05:51.923379036+02:00
+  - created: "2019-07-03T21:31:59.735485368+02:00"
     description: A suite of web based open source business apps.
     digest: f0c11fdab4b03bb1f5f192604bf26d54dc0e2d273721c228047dbae595fb911d
     engine: gotpl
@@ -158,7 +179,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.1.1.tgz
     version: 0.1.1
-  - created: 2019-06-25T11:05:51.921465418+02:00
+  - created: "2019-07-03T21:31:59.732578559+02:00"
     description: A suite of web based open source business apps.
     digest: 7500dba1a9d5f6c4f7a0aed12715d7d479f20ebaeb5b0421b890bbf0ce1e3f28
     engine: gotpl
@@ -176,7 +197,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.1.0.tgz
     version: 0.1.0
-  - created: 2019-06-25T11:05:51.919395622+02:00
+  - created: "2019-07-03T21:31:59.728767742+02:00"
     description: A suite of web based open source business apps.
     digest: 833db86abd29f7a98715c7e5c258e0019df53861a34729cb3072ae3b5fe688e4
     engine: gotpl
@@ -194,7 +215,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.18.tgz
     version: 0.0.18
-  - created: 2019-06-25T11:05:51.917175493+02:00
+  - created: "2019-07-03T21:31:59.726502237+02:00"
     description: A suite of web based open source business apps.
     digest: bf8a06c637b0f187ac3883d801ac928475b15e3ea39c6c34891b9aadeb5acafa
     engine: gotpl
@@ -212,7 +233,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.17.tgz
     version: 0.0.17
-  - created: 2019-06-25T11:05:51.914337402+02:00
+  - created: "2019-07-03T21:31:59.723486346+02:00"
     description: A suite of web based open source business apps.
     digest: 585345eede822a9fde4474187569fe58ca1bb9f2d21ecd4191ec1d475cfb4b36
     engine: gotpl
@@ -230,7 +251,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.16.tgz
     version: 0.0.16
-  - created: 2019-06-25T11:05:51.913113241+02:00
+  - created: "2019-07-03T21:31:59.720436777+02:00"
     description: A suite of web based open source business apps.
     digest: caee328f6d5a54c4a4afc5d03dc9d17e6f77032876c5c0e729a57bb7117cb711
     engine: gotpl
@@ -248,7 +269,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.15.tgz
     version: 0.0.15
-  - created: 2019-06-25T11:05:51.911806142+02:00
+  - created: "2019-07-03T21:31:59.714715388+02:00"
     description: A suite of web based open source business apps.
     digest: af83a1bdbf84a15a9affe1d25601b4de24b9eecc242a2c86619e6eb3a7cea10c
     engine: gotpl
@@ -266,7 +287,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-0.0.14.tgz
     version: 0.0.14
-  - created: 2019-06-25T11:05:51.910498638+02:00
+  - created: "2019-07-03T21:31:59.711324677+02:00"
     description: A suite of web based open source business apps.
     digest: cfde0c33ed29860a7ca2c44a447661d21231336b00b60499c47cdff8c8d23b20
     engine: gotpl
@@ -285,7 +306,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.0.13.tgz
     version: 0.0.13
   odoo-test:
-  - created: 2019-06-25T11:05:51.932989122+02:00
+  - created: "2019-07-03T21:31:59.747135583+02:00"
     description: A chart to run Odoo test jobs
     digest: d144345d3f5c90414dde952cb8ab713354e4e3983251943687f43b7bec4666a7
     engine: gotpl
@@ -300,7 +321,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.6.tgz
     version: 0.0.6
-  - created: 2019-06-25T11:05:51.931524754+02:00
+  - created: "2019-07-03T21:31:59.746612216+02:00"
     description: A chart to run Odoo test jobs
     digest: 8ae7a30f3af6a3c3ad0e341a25f924039527dfe2306b9cd4647d51dd2a9bb20b
     engine: gotpl
@@ -315,7 +336,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.5.tgz
     version: 0.0.5
-  - created: 2019-06-25T11:05:51.930896589+02:00
+  - created: "2019-07-03T21:31:59.745998544+02:00"
     description: A chart to run Odoo test jobs
     digest: c191435ac62637fe352a41ed524f698d97c2b810534dae4dce3bf205c7014c7c
     engine: gotpl
@@ -330,7 +351,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.4.tgz
     version: 0.0.4
-  - created: 2019-06-25T11:05:51.930285748+02:00
+  - created: "2019-07-03T21:31:59.745359633+02:00"
     description: A chart to run Odoo test jobs
     digest: 7c70bbe894bc722d1b31299f7c277e283dd4ed478ee259bea370b8150783abfb
     engine: gotpl
@@ -345,7 +366,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.3.tgz
     version: 0.0.3
-  - created: 2019-06-25T11:05:51.929747948+02:00
+  - created: "2019-07-03T21:31:59.744831774+02:00"
     description: A chart to run Odoo test jobs
     digest: 72fcb92b119bacf40feb8d98bfd94fed244ea092d188e968fb5656dd667450fc
     engine: gotpl
@@ -360,7 +381,7 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.2.tgz
     version: 0.0.2
-  - created: 2019-06-25T11:05:51.929208715+02:00
+  - created: "2019-07-03T21:31:59.744287732+02:00"
     description: A chart to run Odoo test jobs
     digest: 6f0c7a167e4d0854b78a2f12a84e2282c6790daf3119b649783429ee718a699e
     engine: gotpl
@@ -375,4 +396,4 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.1.tgz
     version: 0.0.1
-generated: 2019-06-25T11:05:51.905930888+02:00
+generated: "2019-07-03T21:31:59.672514414+02:00"
