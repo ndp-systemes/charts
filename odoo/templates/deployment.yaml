@@ -109,10 +109,6 @@ spec:
           value: {{ .Values.odoo.logLevel | default "info" | quote }}
         - name: UNACCENT
           value: {{ .Values.odoo.unaccent | quote }}
-        {{- if or .Release.IsUpgrade (and .Values.postgresql.dumpPath .Values.odoo.upgradeOnInit) }}
-        - name: UPDATE
-          value: {{ .Values.odoo.updateModule | default "all" | quote }}
-        {{- end }}
         {{- if and .Release.IsInstall (not .Values.postgresql.dumpPath) }}
         - name: INSTALL
           value: {{ template "odoo.installModule" . }}
