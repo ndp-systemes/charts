@@ -33,6 +33,10 @@ spec:
       - name: {{ template "odoo.fullname" . }}
         image: {{ template "odoo.image" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        resources:
+          requests:
+            memory: 512Mi
+            cpu: 300m
         env:
         - name: ADMIN_PASSWD
           value: "secret"
