@@ -35,8 +35,8 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         resources:
           requests:
-            memory: 512Mi
-            cpu: 300m
+            memory: 768Mi
+            cpu: 800m
         env:
         - name: ADMIN_PASSWD
           value: "secret"
