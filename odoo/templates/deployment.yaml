@@ -113,6 +113,10 @@ spec:
         - name: INSTALL
           value: {{ template "odoo.installModule" . }}
         {{- end }}
+        {{- if  and .Release.IsInstall (and .Values.postgresql.dumpPath .Values.odoo.upgradeOnInit) }}
+        - name: UPDATE
+          value: {{ .Values.odoo.updateModule | default "all" | quote }}
+        {{- end }}
         {{- if .Values.extraEnv }}
 {{ toYaml .Values.extraEnv | indent 8 }}
         {{- end }}
