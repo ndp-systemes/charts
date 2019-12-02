@@ -75,7 +75,7 @@ Return the odoo project source
 {{- define "odoo.repository1" -}}
 {{- $branch := default .Values.image.tag .Values.git.branch -}}
 {{- $proj := default "" .Values.git.project -}}
-{{- $default_repo := printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group $proj -}}
+{{- $default_repo := and $proj (printf "-b %s git@%s:%s/%s.git" $branch .Values.git.server .Values.git.group $proj) -}}
 {{- default $default_repo .Values.git.repo1 -}}
 {{- end -}}
 
