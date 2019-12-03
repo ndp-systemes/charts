@@ -12,7 +12,9 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ include "aeroodocs.fullname" . }}
+        app: {{ include "aeroodocs.name" . }}
+        chart: {{ template "aeroodocs.chart" . }}
+        release: {{ .Release.Name | quote }}
     spec:
       containers:
       - name: {{ include "aeroodocs.fullname" . }}
