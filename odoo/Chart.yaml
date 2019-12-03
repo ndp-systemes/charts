@@ -1,5 +1,5 @@
 name: odoo
-version: 0.2.1
+version: 0.3.0
 description: A suite of web based open source business apps.
 home: https://www.ndp-systemes.fr
 keywords:
@@ -12,3 +12,7 @@ maintainers:
 - name: NDP Systèmes
   email: contact@ndp-systemes.fr
 engine: gotpl
+dependencies:
+  - name: postgresql
+    version: 5.x.x
+    repository: https://kubernetes-charts.storage.googleapis.com

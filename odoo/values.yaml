@@ -125,7 +125,7 @@ postgresql:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "cinder-high-speed"
+    # storageClass:
     accessMode: ReadWriteOnce
     size: 8Gi
 
@@ -138,6 +138,7 @@ postgresql:
     extraVolumeMounts:
       - name: dumps
         mountPath: /dumps
+        subPath: "dumps"
     extraVolumes:
       - name: dumps
         persistentVolumeClaim:
@@ -188,8 +189,8 @@ ingress:
   ##
   ## If tls is set to true, annotation ingress.kubernetes.io/secure-backends: "true" will automatically be set
   annotations:
-  #  kubernetes.io/ingress.class: nginx
-  #  kubernetes.io/tls-acme: true
+    ingress.kubernetes.io/hsts-max-age: "315360000"
+    ingress.kubernetes.io/ssl-redirect: "true"
 
   secrets:
   ## If you're providing your own certificates, please use this to add the certificates as secrets
@@ -217,7 +218,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "nfs"
+  storageClass: "nfs-ndpshare"
   accessMode: ReadWriteMany
   size: 8Gi
 
