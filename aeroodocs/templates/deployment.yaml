@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ include "aeroodocs.fullname" . }}
+  labels:
+    app: {{ include "aeroodocs.fullname" . }}
+    chart: {{ include "aeroodocs.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ include "aeroodocs.fullname" . }}
+    spec:
+      containers:
+      - name: {{ include "aeroodocs.fullname" . }}
+        image: "ndpsystemes/aeroodocs"
+        imagePullPolicy: "Always"
+        livenessProbe:
+          exec:
+            command: ["/check_alive.sh"]
+          initialDelaySeconds: 60
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          exec:
+            command: ["/check_alive.sh"]
+          initialDelaySeconds: 10
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        ports:
+        - name: http
+          containerPort: 8989
