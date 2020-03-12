@@ -137,8 +137,11 @@ postgresql:
   master:
     extraVolumeMounts:
       - name: dumps
-        mountPath: /dumps
-        subPath: "dumps"
+        mountPath: /dumps/local
+        subPath: "dumps/local"
+      - name: dumps
+        mountPath: /dumps/clean
+        subPath: "dumps/clean"
     extraVolumes:
       - name: dumps
         persistentVolumeClaim:
