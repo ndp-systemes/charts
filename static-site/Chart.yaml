@@ -1,0 +1,13 @@
+apiVersion: v2
+name: static-site
+version: 0.0.1
+description: A chart to run a static site in an nginx image
+home: https://www.ndp-systemes.fr
+keywords:
+- nginx
+- static
+- site
+maintainers:
+- name: NDP Systèmes
+  email: contact@ndp-systemes.fr
+engine: gotpl

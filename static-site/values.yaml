@@ -1,0 +1,14 @@
+image:
+  registry: docker.io
+  repository: bitnami/nginx
+  tag: "latest"
+  pullPolicy: Always
+
+ingress:
+  ## Leave empty to have default name
+  name:
+  domain: test.ndp-systemes.fr
+  enabled: true
+  annotations:
+    ingress.kubernetes.io/hsts-max-age: "315360000"
+    ingress.kubernetes.io/ssl-redirect: "true"

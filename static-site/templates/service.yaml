@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "static-site.fullname" . }}
+  labels:
+    app: {{ template "static-site.name" . }}
+    chart: {{ template "static-site.chart" . }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+  selector:
+    app: {{ template "static-site.name" . }}
+    release: {{ .Release.Name }}

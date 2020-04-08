@@ -1,0 +1,25 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    {{- range $key, $value := .Values.ingress.annotations }}
+      {{ $key }}: {{ $value | quote }}
+    {{- end }}
+  labels:
+    app: {{ template "static-site.name" . }}
+    chart: {{ template "static-site.chart" . }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+  name: {{ template "static-site.fullname" . }}
+spec:
+  rules:
+  - host: {{ template "static-site.hostname" . }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ template "static-site.fullname" . }}
+          servicePort: 80
+        path: /
+---
+{{- end }}
