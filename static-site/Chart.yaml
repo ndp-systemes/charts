@@ -1,6 +1,6 @@
 apiVersion: v2
 name: static-site
-version: 0.0.1
+version: 0.0.2
 description: A chart to run a static site in an nginx image
 home: https://www.ndp-systemes.fr
 keywords:

@@ -3,9 +3,13 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    {{- range $key, $value := .Values.ingress.annotations }}
-      {{ $key }}: {{ $value | quote }}
-    {{- end }}
+  {{- range $key, $value := .Values.ingress.annotations }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
+  {{- if .Values.basicAuth.enable }}
+    ingress.kubernetes.io/auth-type: basic
+    ingress.kubernetes.io/auth-secret: {{ .Values.basicAuth.secret }}
+  {{- end }}
   labels:
     app: {{ template "static-site.name" . }}
     chart: {{ template "static-site.chart" . }}

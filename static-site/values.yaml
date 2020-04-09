@@ -12,3 +12,6 @@ ingress:
   annotations:
     ingress.kubernetes.io/hsts-max-age: "315360000"
     ingress.kubernetes.io/ssl-redirect: "true"
+  basicAuth:
+    enable: false
+    secret: ""
