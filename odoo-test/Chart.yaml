@@ -1,5 +1,6 @@
+apiVersion: v2
 name: odoo-test
-version: 0.0.13
+version: 0.1.0
 description: A chart to run Odoo test jobs
 home: https://www.ndp-systemes.fr
 keywords:
