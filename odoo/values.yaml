@@ -12,17 +12,8 @@ image:
   pullPolicy: Always
 
 odoo:
-  ## If postgresql.dumpPath is specified, set to true to upgrade the database after init.
-  upgradeOnInit: false
-
-  ## By default Odoo configuration will not be touched during upgrade
-  ## Set reloadConfig to "true" to have all following options reset
-  reloadConfig: false
-
-  ##
-  ## Following lines have no effect on upgrade if reloadConfig is false
-  ##
-
+  installModule:
+  updateModule:
   ## Nb of odoo workers inside one pod
   workers: 3
   ## Set to have none default value
@@ -30,12 +21,6 @@ odoo:
   limitTimeReal:
   limitMemorySoft:
   limitMemoryHard:
-  ## Override to define a custom module to install
-  ## Default to "<RELEASE_NAME>_erp"
-  module:
-  ## Override to specify the module to update when upgrading
-  ## Defaults to 'all'
-  updateModule:
   ## Override here to define a custom database
   database:
   ## Set to "False" string to hav demo data loaded
@@ -57,40 +42,31 @@ odoo:
   logLevel: "info"
 
 git:
-  ## Git server where to fetch sources
+  ## Default server for repositories
   server: gitlab.ndp-systemes.fr
-
-  group: odoo-addons
-
-  ## Set to override
-  ## Defaults to tag
+  ## Default branch for repositories
   branch:
 
-  ## Git project to clone.
-  ## Defaults to the release name if not specified
-  project:
-  ## Dependancies project names
-  depProject1: common-modules
-  depProject2: community-addons
-  depProject3:
-  depProject4:
-  depProject5:
-  depProject6:
-  depProject7:
-  depProject8:
-  depProject9:
+  pullKeySecret:
+    name: "ssh-private-key-deploy"
+    key: "deploy_key_NDP"
 
-  ## Set to override project git repositories.
-  repo1:
-  repo2:
-  repo3:
-  repo4:
-  repo5:
-  repo6:
-  repo7:
-  repo8:
-  repo9:
-  repo10:
+  repositories:
+    ## Add git repositories
+    ## method: ssh or https. Defaults to ssh
+    ## branch: branch name. Defaults to git.branch or image.tag
+    ## server: git server name. Defaults to git.server. If set, https is assumed.
+    ## httpsSecret: name of a secret with https credentials. Secret must contain a 'username' and a 'password'
+
+    # DEPOT_GIT:
+    #   path: my-user/my-project
+    #   method: ssh
+    #   server: github.com
+    #   httpsCredentials: my-https-secret
+    DEPOT_GIT2:
+      path: odoo-addons/common-modules
+    DEPOT_GIT3:
+      path: odoo-addons/community-addons
 
 ##
 ## PostgreSQL chart configuration
