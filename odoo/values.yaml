@@ -17,8 +17,8 @@ odoo:
   ## Nb of odoo workers inside one pod
   workers: 3
   ## Set to have none default value
-  limitTimeCPU:
-  limitTimeReal:
+  limitTimeCPU: 1800
+  limitTimeReal: 3600
   limitMemorySoft:
   limitMemoryHard:
   ## Override here to define a custom database
