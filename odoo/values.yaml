@@ -53,6 +53,7 @@ git:
 
   repositories:
     ## Add git repositories
+    ## path: git path on the server
     ## method: ssh or https. Defaults to ssh
     ## branch: branch name. Defaults to git.branch or image.tag
     ## server: git server name. Defaults to git.server. If set, https is assumed.
@@ -60,9 +61,10 @@ git:
 
     # DEPOT_GIT:
     #   path: my-user/my-project
+    #   branch: 12.0
     #   method: ssh
     #   server: github.com
-    #   httpsCredentials: my-https-secret
+    #   httpsSecret: my-https-secret
     DEPOT_GIT2:
       path: odoo-addons/common-modules
     DEPOT_GIT3:
@@ -109,19 +111,6 @@ postgresql:
     ## Requires persistence.enabled: true
     ## If defined, PVC must be created manually before volume will be bound
     existingClaim:
-
-  master:
-    extraVolumeMounts:
-      - name: dumps
-        mountPath: /dumps/local
-        subPath: "dumps/local"
-      - name: dumps
-        mountPath: /dumps/clean
-        subPath: "dumps/clean"
-    extraVolumes:
-      - name: dumps
-        persistentVolumeClaim:
-          claimName: "dumps"
 
 ## Kubernetes svc configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
@@ -197,8 +186,8 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "nfs-ndpshare"
-  accessMode: ReadWriteMany
+  #  storageClass: "-"
+  accessMode: ReadWriteOnce
   size: 8Gi
 
   ## A manually managed Persistent Volume and Claim

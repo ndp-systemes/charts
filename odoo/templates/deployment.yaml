@@ -133,7 +133,10 @@ spec:
         volumeMounts:
         - name: odoo-data
           mountPath: /var/lib/odoo
-          subPath: odoo/{{ .Release.Namespace }}/{{ template "odoo.fullname" . }}
+          subPath: odoo
+        - name: odoo-data
+          mountPath: /opt
+          subPath: opt
       volumes:
       - name: odoo-data
       {{- if .Values.persistence.enabled }}
