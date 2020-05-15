@@ -112,6 +112,18 @@ postgresql:
     ## If defined, PVC must be created manually before volume will be bound
     existingClaim:
 
+  postgresqlExtendedConf:
+    sharedBuffers: 128MB
+    workMem: 4MB
+    maxConnections : 100
+    maintenanceWorkMem : 64MB
+    vacuumCostDelay : 20ms
+    synchronousCommit : local
+    walBuffers : 8MB
+    maxWalSize : 1GB
+    checkpointCompletionTarget : 0.9
+    effectiveCacheSize : 4GB
+    deadlockTimeout : 3s
 ## Kubernetes svc configuration
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
 ##
