@@ -98,8 +98,9 @@ spec:
         - name: UPDATE
           value: {{ .Values.odoo.updateModule | quote }}
         {{- end }}
-        {{- if .Values.extraEnv }}
-{{ toYaml .Values.extraEnv | indent 8 }}
+        {{- range $key, $value := .Values.extraEnv }}
+        - name: {{ $key }}
+          value: {{ $value }}
         {{- end }}
         ports:
         - name: http
