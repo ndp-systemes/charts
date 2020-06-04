@@ -65,6 +65,8 @@ git:
     #   method: ssh
     #   server: github.com
     #   httpsSecret: my-https-secret
+    DEPOT_GIT:
+      path:
     DEPOT_GIT2:
       path: odoo-addons/common-modules
     DEPOT_GIT3:
