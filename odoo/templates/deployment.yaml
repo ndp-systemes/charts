@@ -88,8 +88,11 @@ spec:
           value: {{ .Values.odoo.dbFilter | quote }}
         - name: LOG_LEVEL
           value: {{ .Values.odoo.logLevel | default "info" | quote }}
+        - name: LOAD
+          value: {{ include "odoo.loadModules" . | quote }}
         - name: UNACCENT
           value: {{ .Values.odoo.unaccent | quote }}
+{{ include "odoo.queueJobVars" . | indent 8 }}
         {{- if .Values.odoo.installModule }}
         - name: INSTALL
           value: {{ .Values.odoo.installModule }}
@@ -99,8 +102,8 @@ spec:
           value: {{ .Values.odoo.updateModule | quote }}
         {{- end }}
         {{- range $key, $value := .Values.extraEnv }}
-        - name: {{ $key }}
-          value: {{ $value }}
+        - name: {{ $key | quote }}
+          value: {{ $value | quote }}
         {{- end }}
         ports:
         - name: http

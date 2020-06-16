@@ -91,6 +91,34 @@ Return the ingress host name
 {{- end }}
 {{- end }}
 
+{{- define "odoo.queueJobVars" -}}
+{{- if .Values.odoo.queueJobs.enabled }}
+{{- $varName := "ODOO_QUEUE_JOB_CHANNELS" }}
+{{- if or (eq .Values.image.tag "8.0") (eq .Values.image.tag "9.0") }}
+{{- $varName = "ODOO_CONNECTOR_CHANNELS" }}
+{{- end }}
+- name: {{ $varName }}
+  value: {{ .Values.odoo.queueJobs.channels }}
+{{- end }}
+{{- end }}
+
+{{- define "odoo.loadModules" -}}
+{{- if .Values.odoo.queueJobs.enabled }}
+{{- $modules := "web,queue_job" }}
+{{- if or (eq .Values.image.tag "8.0") (eq .Values.image.tag "9.0") }}
+{{- $modules = "web,web_kanban,connector" }}
+{{- else if eq .Values.image.tag "10.0" }}
+{{- $modules = "web,web_kanban,queue_job" }}
+{{- end }}
+{{- if .Values.odoo.load }}
+{{ $modules = printf "%s,%s" $modules .Values.odoo.load }}
+{{- end }}
+{{- $modules }}
+{{- else }}
+{{- .Values.odoo.load }}
+{{- end }}
+{{- end }}
+
 {{/*
 Override postgresql secret to use ours
 */}}

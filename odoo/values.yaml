@@ -40,6 +40,12 @@ odoo:
   adminPassword:
   ## Set log level
   logLevel: "info"
+  ## server wide modules to load
+  load:
+  ## Queue jobs management
+  queueJobs:
+    enabled: false
+    channels: "root:1"
 
 git:
   ## Default server for repositories
