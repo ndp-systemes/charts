@@ -131,6 +131,7 @@ postgresql:
     maxWalSize : 1GB
     checkpointCompletionTarget : 0.9
     effectiveCacheSize : 4GB
+    tcpKeepalivesIdle: 300
     deadlockTimeout : 3s
 
   extraEnv:
