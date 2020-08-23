@@ -1,0 +1,20 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: {{ template "odoo.postgresql.fullname" . }}
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-delete-policy": before-hook-creation
+spec:
+  teamId: "ndp"
+  volume:
+    size: {{ .Values.postgresql.volume.size }}
+  numberOfInstances: {{ .Values.postgresql.instances }}
+  users:
+    odoo:
+    - superuser
+    - createdb
+  postgresql:
+    version: "12"
+    parameters:
+{{ .Values.postgresql.parameters | toYaml | indent 6 }}

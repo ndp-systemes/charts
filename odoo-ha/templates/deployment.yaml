@@ -1,0 +1,164 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "odoo.fullname" . }}
+  labels:
+    app: "odoo"
+    chart: {{ template "odoo.chart" . }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+spec:
+  selector:
+    matchLabels:
+      app: "odoo"
+      release: "{{ .Release.Name }}"
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: "odoo"
+        chart: {{ template "odoo.chart" . }}
+        release: {{ .Release.Name | quote }}
+    spec:
+      {{- if .Values.sameNode }}
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchExpressions:
+                - key: cluster-name
+                  operator: In
+                  values:
+                  - {{ template "odoo.postgresql.fullname"}}
+                - key: application
+                  operator: In
+                  values:
+                  - spilo
+                - key: spilo-role
+                  operator: In
+                  values:
+                  - spilo-master
+      {{- end }}
+      containers:
+      - name: {{ template "odoo.fullname" . }}
+        image: {{ template "odoo.image" . }}
+        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        env:
+        - name: ADMIN_PASSWD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "odoo.fullname" . }}
+              key: "odoo-admin-password"
+        - name: DB_HOST
+          value: {{ template "odoo.postgresql.fullname" . }}
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "odoo.postgresql.secret" . }}
+              key: username
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "odoo.postgresql.secret" . }}
+              key: password
+        - name: DATABASE
+          value: {{ template "odoo.database" . }}
+        - name: SSH_PRIVATE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.git.pullKeySecret.name }}
+              key: {{ .Values.git.pullKeySecret.key }}
+        - name: SERVEUR_SSH
+          value: {{ .Values.git.server | quote }}
+{{ include "odoo.repositories" . | indent 8 }}
+        - name: WORKERS
+          value: {{ .Values.odoo.workers | quote }}
+        - name: LIMIT_TIME_CPU
+          value: {{ .Values.odoo.limitTimeCPU | quote }}
+        - name: LIMIT_TIME_REAL
+          value: {{ .Values.odoo.limitTimeReal | quote }}
+        - name: LIMIT_MEMORY_SOFT
+          value: {{ .Values.odoo.limitMemorySoft | quote }}
+        - name: LIMIT_MEMORY_HARD
+          value: {{ .Values.odoo.limitMemoryHard | quote }}
+        - name: HELM_RELEASE_VERSION
+          value: {{ .Release.Revision | quote }}
+        - name: WITHOUT_DEMO
+          value: {{ .Values.odoo.withoutDemo | quote }}
+        - name: CMD_LINE_PARAMS
+          value: {{ .Values.odoo.cmdLineParams | quote }}
+        - name: TEST_ENABLE
+          value: {{ .Values.odoo.testEnable | quote }}
+        - name: STOP_AFTER_INIT
+          value: {{ .Values.odoo.stopAfterInit | quote }}
+        - name: DB_FILTER
+          value: {{ .Values.odoo.dbFilter | quote }}
+        - name: LOG_LEVEL
+          value: {{ .Values.odoo.logLevel | default "info" | quote }}
+        - name: LOAD
+          value: {{ include "odoo.loadModules" . | quote }}
+        - name: UNACCENT
+          value: {{ .Values.odoo.unaccent | quote }}
+{{ include "odoo.queueJobVars" . | indent 8 }}
+        {{- if .Values.odoo.installModule }}
+        - name: INSTALL
+          value: {{ .Values.odoo.installModule }}
+        {{- end }}
+        {{- if .Values.odoo.updateModule }}
+        - name: UPDATE
+          value: {{ .Values.odoo.updateModule | quote }}
+        {{- end }}
+        {{- range $key, $value := .Values.extraEnv }}
+        - name: {{ $key | quote }}
+          value: {{ $value | quote }}
+        {{- end }}
+        ports:
+        - name: http
+          containerPort: 8069
+        - name: longpolling
+          containerPort: 8072
+        {{- if .Values.livenessProbe.enabled }}
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+          successThreshold: {{ .Values.livenessProbe.successThreshold }}
+          failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+        {{- end }}
+        {{- if .Values.readinessProbe.enabled }}
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+          initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+          successThreshold: {{ .Values.readinessProbe.successThreshold }}
+          failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
+        {{- end }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        volumeMounts:
+        - name: odoo-data
+          mountPath: /var/lib/odoo
+          subPath: odoo
+        - name: odoo-data
+          mountPath: /opt
+          subPath: opt
+      volumes:
+      - name: odoo-data
+      {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ .Values.persistence.existingClaim | default (include "odoo.fullname" .) }}
+      {{- else }}
+        emptyDir: {}
+      {{- end }}

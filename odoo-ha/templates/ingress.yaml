@@ -1,0 +1,29 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "odoo.fullname" . }}
+  labels:
+    app: "odoo"
+    chart: {{ template "odoo.chart" . }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+  annotations:
+    {{- range $key, $value := .Values.ingress.annotations }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+spec:
+  rules:
+  - host: {{ template "odoo.hostname" . }}
+    http:
+      paths:
+        - path: "/"
+          backend:
+            serviceName: {{ template "odoo.fullname" . }}
+            servicePort: http
+        - path: "/longpolling"
+          backend:
+            serviceName: {{ template "odoo.fullname" . }}
+            servicePort: longpolling
+---
+{{- end }}
