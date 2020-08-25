@@ -148,17 +148,21 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
-        - name: odoo-data
-          mountPath: /var/lib/odoo
-          subPath: odoo
-        - name: odoo-data
+        - name: odoo-filestore
+          mountPath: /var/lib/odoo/filestore
+        - name: odoo-sessions
+          mountPath: /var/lib/odoo/sessions
+        - name: odoo-sources
           mountPath: /opt
-          subPath: opt
       volumes:
-      - name: odoo-data
+      - name: odoo-filestore
       {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
           claimName: {{ .Values.persistence.existingClaim | default (include "odoo.fullname" .) }}
       {{- else }}
         emptyDir: {}
       {{- end }}
+      - name: odoo-sessions
+        emptyDir: {}
+      - name: odoo-sources
+        emptyDir: {}

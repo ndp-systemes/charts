@@ -149,8 +149,8 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  #  storageClass: "-"
-  accessMode: ReadWriteOnce
+  storageClass: "csi-s3"
+  accessMode: ReadWriteMany
   size: 8Gi
 
   ## A manually managed Persistent Volume and Claim
