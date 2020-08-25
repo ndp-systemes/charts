@@ -2,6 +2,8 @@ apiVersion: "acid.zalan.do/v1"
 kind: postgresql
 metadata:
   name: {{ template "odoo.postgresql.fullname" . }}
+  labels:
+    release: {{ .Release.Name | quote }}
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-delete-policy": before-hook-creation
