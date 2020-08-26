@@ -110,18 +110,27 @@ Return the ingress host name
 {{- end }}
 
 {{- define "odoo.loadModules" -}}
+{{- $modules := "web" -}}
+{{- if or (eq .Values.image.tag "7.0") (eq .Values.image.tag "8.0") (eq .Values.image.tag "9.0") (eq .Values.image.tag "10.0") }}
+{{- $modules = "web,web_kanban" -}}
+{{- end }}
 {{- if .Values.odoo.queueJobs.enabled }}
-{{- $modules := "web,queue_job" }}
 {{- if or (eq .Values.image.tag "8.0") (eq .Values.image.tag "9.0") }}
-{{- $modules = "web,web_kanban,connector" }}
-{{- else if eq .Values.image.tag "10.0" }}
-{{- $modules = "web,web_kanban,queue_job" }}
+{{- $modules = printf "%s,connector" $modules }}
+{{- else }}
+{{- $modules = printf "%s,queue_job" $modules }}
+{{- end }}
 {{- end }}
 {{- if .Values.odoo.load }}
-{{ $modules = printf "%s,%s" $modules .Values.odoo.load }}
+{{- $modules = printf "%s,%s" $modules .Values.odoo.load }}
 {{- end }}
 {{- $modules }}
-{{- else }}
-{{- .Values.odoo.load }}
 {{- end }}
-{{- end }}
+
+{{- define "odoo.redis.fullname" -}}
+{{- printf "%s-redis-master" .Release.Name -}}
+{{- end -}}
+
+{{- define "odoo.redis.secret" -}}
+{{- printf "%s-redis" .Release.Name -}}
+{{- end -}}

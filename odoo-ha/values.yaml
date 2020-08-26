@@ -41,7 +41,7 @@ odoo:
   ## Set log level
   logLevel: "info"
   ## server wide modules to load
-  load:
+  load: redis_session_store
   ## Queue jobs management
   queueJobs:
     enabled: false
@@ -77,6 +77,11 @@ git:
       path: odoo-addons/common-modules
     DEPOT_GIT3:
       path: odoo-addons/community-addons
+
+redis:
+  enabled: true
+  cluster:
+    enabled: false
 
 postgresql:
   instances: 2

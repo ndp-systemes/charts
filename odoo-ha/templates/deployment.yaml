@@ -103,6 +103,17 @@ spec:
           value: {{ .Values.odoo.logLevel | default "info" | quote }}
         - name: LOAD
           value: {{ include "odoo.loadModules" . | quote }}
+        {{- if .Values.redis.enabled }}
+        - name: ENABLE_REDIS
+          value: "True"
+        - name: REDIS_HOST
+          value: {{ template "odoo.redis.fullname" . }}
+        - name: REDIS_PASS
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "odoo.redis.secret" . }}
+              key: redis-password
+        {{- end }}
         - name: UNACCENT
           value: {{ .Values.odoo.unaccent | quote }}
 {{ include "odoo.queueJobVars" . | indent 8 }}

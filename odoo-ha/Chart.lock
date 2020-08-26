@@ -1,6 +1,6 @@
 dependencies:
-- name: postgresql-ha
+- name: redis
   repository: https://charts.bitnami.com/bitnami
-  version: 3.5.6
-digest: sha256:a314ffa195fe6a4e3c94ddbf072f6874ac24f1e92918b84076e13dac3f6e756b
-generated: "2020-08-22T16:56:15.281086731+02:00"
+  version: 10.7.16
+digest: sha256:ff26bfad3da7707fe8a5956428d6135846a4ef91082dbe0898b396cb57a5bb6c
+generated: "2020-08-25T20:33:11.143150774+02:00"

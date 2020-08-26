@@ -1,6 +1,6 @@
 apiVersion: v2
 name: odoo-ha
-version: 0.0.3
+version: 0.0.4
 description: A suite of web based open source business apps.
 home: https://www.ndp-systemes.fr
 keywords:
@@ -13,3 +13,7 @@ maintainers:
 - name: NDP Systèmes
   email: contact@ndp-systemes.fr
 engine: gotpl
+dependencies:
+  - name: redis
+    version: 10.x.x
+    repository: https://charts.bitnami.com/bitnami
