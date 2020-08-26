@@ -12,6 +12,7 @@ image:
   pullPolicy: Always
 
 odoo:
+  instances: 2
   installModule:
   updateModule:
   ## Nb of odoo workers inside one pod
@@ -82,6 +83,9 @@ redis:
   enabled: true
   cluster:
     enabled: false
+  master:
+    persistence:
+      enabled: false
 
 postgresql:
   instances: 2

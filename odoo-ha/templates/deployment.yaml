@@ -14,6 +14,7 @@ spec:
       release: "{{ .Release.Name }}"
   strategy:
     type: Recreate
+  replicas: {{ .Values.odoo.instances }}
   template:
     metadata:
       labels:
