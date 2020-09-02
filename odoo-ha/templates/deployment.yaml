@@ -34,7 +34,7 @@ spec:
                 - key: cluster-name
                   operator: In
                   values:
-                  - {{ template "odoo.postgresql.fullname"}}
+                  - {{ template "odoo.postgresql.fullname" . }}
                 - key: application
                   operator: In
                   values:

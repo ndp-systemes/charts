@@ -20,7 +20,6 @@ Name of the postgresql service
 */}}
 {{- define "odoo.postgresql.fullname" -}}
 {{- printf "ndp-%s-postgresql" .Release.Name -}}
-{{/*{{- printf "ndp-%s-postgresql" "testoh" -}}*/}}
 {{- end -}}
 
 {{/*
