@@ -138,9 +138,8 @@ spec:
         - name: odoo-data
           mountPath: /var/lib/odoo
           subPath: odoo
-        - name: odoo-data
+        - name: odoo-sources
           mountPath: /opt
-          subPath: opt
       volumes:
       - name: odoo-data
       {{- if .Values.persistence.enabled }}
@@ -149,3 +148,5 @@ spec:
       {{- else }}
         emptyDir: {}
       {{- end }}
+      - name: odoo-sources
+        emptyDir: {}
