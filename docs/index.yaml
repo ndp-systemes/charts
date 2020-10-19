@@ -2,7 +2,22 @@ apiVersion: v1
 entries:
   aeroodocs:
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.114331893+02:00"
+    created: "2020-10-19T17:47:02.537351522+02:00"
+    description: Aeroo Docs report server
+    digest: 59c8e23dc99188194f64299e59f2b2cb15965ee67465adaea886be18aa5f4eba
+    home: https://www.ndp-systemes.fr
+    keywords:
+    - odoo
+    - aeroo
+    maintainers:
+    - email: contact@ndp-systemes.fr
+      name: NDP Systèmes
+    name: aeroodocs
+    urls:
+    - https://ndp-systemes.github.io/charts/aeroodocs-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v1
+    created: "2020-10-19T17:47:02.537064507+02:00"
     description: Aeroo Docs report server
     digest: f162f924f2e85fb9fe5f562b15582ac61af6804dbe4fc2126c8a6de0003f3ed5
     home: https://www.ndp-systemes.fr
@@ -17,7 +32,7 @@ entries:
     - https://ndp-systemes.github.io/charts/aeroodocs-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.113867276+02:00"
+    created: "2020-10-19T17:47:02.536646596+02:00"
     description: Aeroo Docs report server
     digest: 31d4da3f904242f7a404146bf01823243e184e07dd0086154eb64af42f2cb228
     home: https://www.ndp-systemes.fr
@@ -32,7 +47,7 @@ entries:
     - https://ndp-systemes.github.io/charts/aeroodocs-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.113393026+02:00"
+    created: "2020-10-19T17:47:02.536215312+02:00"
     description: Aeroo Docs report server
     digest: 7686b71879673610df891c75a7f88ceb339b90dd0e7ad5c2888ec024313ebc36
     home: https://www.ndp-systemes.fr
@@ -49,7 +64,7 @@ entries:
   gitlab-runner:
   - apiVersion: v1
     appVersion: 11.11.0-rc1
-    created: "2020-09-24T17:57:59.121997447+02:00"
+    created: "2020-10-19T17:47:02.542753382+02:00"
     description: GitLab Runner
     digest: f1d5ce3fd850ba581aa223989b13c4aeab3af8f4fd5f1da80c4881de4bf28c79
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -71,7 +86,7 @@ entries:
     version: 0.0.5
   - apiVersion: v1
     appVersion: 11.11.0-rc1
-    created: "2020-09-24T17:57:59.120727417+02:00"
+    created: "2020-10-19T17:47:02.541674746+02:00"
     description: GitLab Runner
     digest: 1d03a52c2b7b27ef2873b03d82c50133d1059260585be9f56f70c389c8d4b063
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -93,7 +108,7 @@ entries:
     version: 0.0.4
   - apiVersion: v1
     appVersion: 11.11.0-rc1
-    created: "2020-09-24T17:57:59.119288422+02:00"
+    created: "2020-10-19T17:47:02.540569797+02:00"
     description: GitLab Runner
     digest: 6f1bda192065d5d247fe2bd563d8a0d4f46b9ff33f8cde6d60fca8eb25f5ddc0
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -115,7 +130,7 @@ entries:
     version: 0.0.3
   - apiVersion: v1
     appVersion: 11.11.0-rc1
-    created: "2020-09-24T17:57:59.118065729+02:00"
+    created: "2020-10-19T17:47:02.539504397+02:00"
     description: GitLab Runner
     digest: 58ec0bd67bf294a78a4860604080d32ce134c18b94779bc2802af3a0d75a2636
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -137,7 +152,7 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: 11.11.0-rc1
-    created: "2020-09-24T17:57:59.116897826+02:00"
+    created: "2020-10-19T17:47:02.538473586+02:00"
     description: GitLab Runner
     digest: f0fa5aea792a35ecf79e4e6f150a94dd8c6437fccabed6ceb42020f84fae5121
     icon: https://gitlab.com/uploads/-/system/project/avatar/250833/runner_logo.png
@@ -159,7 +174,7 @@ entries:
     version: 0.0.1
   odoo:
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.197354841+02:00"
+    created: "2020-10-19T17:47:02.613332489+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -181,7 +196,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.10.tgz
     version: 0.5.10
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.231917717+02:00"
+    created: "2020-10-19T17:47:02.648591793+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -203,7 +218,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.9.tgz
     version: 0.5.9
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.227854571+02:00"
+    created: "2020-10-19T17:47:02.643602191+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -225,7 +240,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.8.tgz
     version: 0.5.8
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.223082902+02:00"
+    created: "2020-10-19T17:47:02.639579232+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -247,7 +262,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.7.tgz
     version: 0.5.7
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.219116049+02:00"
+    created: "2020-10-19T17:47:02.63477912+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -269,7 +284,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.6.tgz
     version: 0.5.6
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.215027014+02:00"
+    created: "2020-10-19T17:47:02.630557189+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -291,7 +306,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.5.tgz
     version: 0.5.5
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.209964131+02:00"
+    created: "2020-10-19T17:47:02.626486063+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -313,7 +328,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.4.tgz
     version: 0.5.4
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.205964488+02:00"
+    created: "2020-10-19T17:47:02.621934043+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -335,7 +350,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.3.tgz
     version: 0.5.3
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.201693495+02:00"
+    created: "2020-10-19T17:47:02.618004923+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -357,7 +372,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.2.tgz
     version: 0.5.2
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.193435115+02:00"
+    created: "2020-10-19T17:47:02.609286546+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -379,7 +394,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.1.tgz
     version: 0.5.1
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.187972198+02:00"
+    created: "2020-10-19T17:47:02.605292392+02:00"
     dependencies:
     - name: postgresql
       repository: https://charts.bitnami.com/bitnami
@@ -401,7 +416,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.5.0.tgz
     version: 0.5.0
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.182815997+02:00"
+    created: "2020-10-19T17:47:02.600471556+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -423,7 +438,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.4.2.tgz
     version: 0.4.2
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.178856819+02:00"
+    created: "2020-10-19T17:47:02.597362283+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -445,7 +460,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.4.1.tgz
     version: 0.4.1
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.174857019+02:00"
+    created: "2020-10-19T17:47:02.59423786+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -467,7 +482,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.171681515+02:00"
+    created: "2020-10-19T17:47:02.590377834+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -489,7 +504,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.168312224+02:00"
+    created: "2020-10-19T17:47:02.587190185+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -511,7 +526,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.164906091+02:00"
+    created: "2020-10-19T17:47:02.584007534+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -533,7 +548,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.16045559+02:00"
+    created: "2020-10-19T17:47:02.580835609+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -555,7 +570,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.157202778+02:00"
+    created: "2020-10-19T17:47:02.576773312+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -577,7 +592,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.154006271+02:00"
+    created: "2020-10-19T17:47:02.573487008+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -599,7 +614,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.149920904+02:00"
+    created: "2020-10-19T17:47:02.570158254+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -621,7 +636,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.146616247+02:00"
+    created: "2020-10-19T17:47:02.566869107+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -643,7 +658,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.143313837+02:00"
+    created: "2020-10-19T17:47:02.561998618+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -665,7 +680,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.1.0.tgz
     version: 0.1.0
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.139667207+02:00"
+    created: "2020-10-19T17:47:02.558015602+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -687,7 +702,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.0.18.tgz
     version: 0.0.18
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.137045682+02:00"
+    created: "2020-10-19T17:47:02.555093027+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -709,7 +724,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.0.17.tgz
     version: 0.0.17
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.132772918+02:00"
+    created: "2020-10-19T17:47:02.552409418+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -731,7 +746,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.0.16.tgz
     version: 0.0.16
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.129650027+02:00"
+    created: "2020-10-19T17:47:02.55030316+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -753,7 +768,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.0.15.tgz
     version: 0.0.15
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.12682018+02:00"
+    created: "2020-10-19T17:47:02.547454458+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -775,7 +790,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-0.0.14.tgz
     version: 0.0.14
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.124393521+02:00"
+    created: "2020-10-19T17:47:02.545283443+02:00"
     dependencies:
     - name: postgresql
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -798,7 +813,7 @@ entries:
     version: 0.0.13
   odoo-ha:
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.251860846+02:00"
+    created: "2020-10-19T17:47:02.671598826+02:00"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -820,7 +835,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-ha-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.246068956+02:00"
+    created: "2020-10-19T17:47:02.665942704+02:00"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -842,7 +857,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-ha-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.240756468+02:00"
+    created: "2020-10-19T17:47:02.657800374+02:00"
     dependencies:
     - name: redis
       repository: https://charts.bitnami.com/bitnami
@@ -864,7 +879,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-ha-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.235397887+02:00"
+    created: "2020-10-19T17:47:02.652320135+02:00"
     description: A suite of web based open source business apps.
     digest: 0eb57092187a49d70b2408f7bc895bc55461b5520a5e9620f096b2372de1d7a6
     home: https://www.ndp-systemes.fr
@@ -882,7 +897,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-ha-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.234015616+02:00"
+    created: "2020-10-19T17:47:02.651287759+02:00"
     description: A suite of web based open source business apps.
     digest: 55d38e752a60528d77b8bbc3a37476dc104cf4c223bf0c6d0347e1899e771c27
     home: https://www.ndp-systemes.fr
@@ -900,7 +915,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-ha-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.232981042+02:00"
+    created: "2020-10-19T17:47:02.649938072+02:00"
     description: A suite of web based open source business apps.
     digest: 343f312f0d2b1c840ecdd2024c3bfd0195cfc37a2b833441e715fb73ac07eb0a
     home: https://www.ndp-systemes.fr
@@ -919,7 +934,7 @@ entries:
     version: 0.0.1
   odoo-test:
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.263491241+02:00"
+    created: "2020-10-19T17:47:02.682352253+02:00"
     description: A chart to run Odoo test jobs
     digest: 1a8cdfab624d4e93ed568c0d9e2d8f720096143f85f8a66e464de31021c57cba
     home: https://www.ndp-systemes.fr
@@ -934,7 +949,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.1.0.tgz
     version: 0.1.0
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.255649523+02:00"
+    created: "2020-10-19T17:47:02.675227364+02:00"
     description: A chart to run Odoo test jobs
     digest: 79ec48cd7b951b3c9cb5806e3658fae4d4c21cf368cc457bc9724d44e5ca9681
     home: https://www.ndp-systemes.fr
@@ -949,7 +964,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.13.tgz
     version: 0.0.13
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.254826789+02:00"
+    created: "2020-10-19T17:47:02.674522005+02:00"
     description: A chart to run Odoo test jobs
     digest: b72c2c218090e962cc58ebe87dc9c8337c16b5b134d86f8cc5d79a42727d88c3
     home: https://www.ndp-systemes.fr
@@ -964,7 +979,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.12.tgz
     version: 0.0.12
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.25405227+02:00"
+    created: "2020-10-19T17:47:02.673819383+02:00"
     description: A chart to run Odoo test jobs
     digest: 84151b93cb446e442cc6e7a50c7ecebaa703243731b56ecb64cd920d70c32c0d
     home: https://www.ndp-systemes.fr
@@ -979,7 +994,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.11.tgz
     version: 0.0.11
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.253317488+02:00"
+    created: "2020-10-19T17:47:02.673064184+02:00"
     description: A chart to run Odoo test jobs
     digest: 03575feda205bb92637bfa85966247087939c659f13380ee001fd00a44f1a281
     home: https://www.ndp-systemes.fr
@@ -994,7 +1009,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.10.tgz
     version: 0.0.10
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.262430065+02:00"
+    created: "2020-10-19T17:47:02.681713527+02:00"
     description: A chart to run Odoo test jobs
     digest: cdeba8b9b6d7f887ae321ea49767fa9ba76678d76724f63ee9f980538b421bd1
     home: https://www.ndp-systemes.fr
@@ -1009,7 +1024,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.9.tgz
     version: 0.0.9
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.261610522+02:00"
+    created: "2020-10-19T17:47:02.680907495+02:00"
     description: A chart to run Odoo test jobs
     digest: fee94e86ff47bb202af1848aebdef334d6c1f2f93d682bea6e854705289eaa4a
     home: https://www.ndp-systemes.fr
@@ -1024,7 +1039,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.8.tgz
     version: 0.0.8
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.260838672+02:00"
+    created: "2020-10-19T17:47:02.680193833+02:00"
     description: A chart to run Odoo test jobs
     digest: 71ccb014e97ec1bf07c44c1f89318ac3e3fe7ab7485df437ecd6033c9b1b1537
     home: https://www.ndp-systemes.fr
@@ -1039,7 +1054,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.7.tgz
     version: 0.0.7
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.260037291+02:00"
+    created: "2020-10-19T17:47:02.679420546+02:00"
     description: A chart to run Odoo test jobs
     digest: d144345d3f5c90414dde952cb8ab713354e4e3983251943687f43b7bec4666a7
     home: https://www.ndp-systemes.fr
@@ -1054,7 +1069,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.6.tgz
     version: 0.0.6
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.25926006+02:00"
+    created: "2020-10-19T17:47:02.678689045+02:00"
     description: A chart to run Odoo test jobs
     digest: 8ae7a30f3af6a3c3ad0e341a25f924039527dfe2306b9cd4647d51dd2a9bb20b
     home: https://www.ndp-systemes.fr
@@ -1069,7 +1084,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.257729462+02:00"
+    created: "2020-10-19T17:47:02.677931965+02:00"
     description: A chart to run Odoo test jobs
     digest: c191435ac62637fe352a41ed524f698d97c2b810534dae4dce3bf205c7014c7c
     home: https://www.ndp-systemes.fr
@@ -1084,7 +1099,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.4.tgz
     version: 0.0.4
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.256976073+02:00"
+    created: "2020-10-19T17:47:02.676859808+02:00"
     description: A chart to run Odoo test jobs
     digest: 7c70bbe894bc722d1b31299f7c277e283dd4ed478ee259bea370b8150783abfb
     home: https://www.ndp-systemes.fr
@@ -1099,7 +1114,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.256309181+02:00"
+    created: "2020-10-19T17:47:02.675893414+02:00"
     description: A chart to run Odoo test jobs
     digest: 72fcb92b119bacf40feb8d98bfd94fed244ea092d188e968fb5656dd667450fc
     home: https://www.ndp-systemes.fr
@@ -1114,7 +1129,7 @@ entries:
     - https://ndp-systemes.github.io/charts/odoo-test-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v1
-    created: "2020-09-24T17:57:59.252533738+02:00"
+    created: "2020-10-19T17:47:02.672332979+02:00"
     description: A chart to run Odoo test jobs
     digest: 6f0c7a167e4d0854b78a2f12a84e2282c6790daf3119b649783429ee718a699e
     home: https://www.ndp-systemes.fr
@@ -1130,7 +1145,7 @@ entries:
     version: 0.0.1
   static-site:
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.264422104+02:00"
+    created: "2020-10-19T17:47:02.683263255+02:00"
     description: A chart to run a static site in an nginx image
     digest: fbea1fe2b809f325b134e0e13d9aaa037c9f3e1f67a6577c0de61a1cc0a586cf
     home: https://www.ndp-systemes.fr
@@ -1146,7 +1161,7 @@ entries:
     - https://ndp-systemes.github.io/charts/static-site-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
-    created: "2020-09-24T17:57:59.263957348+02:00"
+    created: "2020-10-19T17:47:02.682805186+02:00"
     description: A chart to run a static site in an nginx image
     digest: d9f91a22366852390810cc1978da94709b79a3984d3912e8d45a8d5b1cd23f71
     home: https://www.ndp-systemes.fr
@@ -1161,4 +1176,4 @@ entries:
     urls:
     - https://ndp-systemes.github.io/charts/static-site-0.0.1.tgz
     version: 0.0.1
-generated: "2020-09-24T17:57:59.112417934+02:00"
+generated: "2020-10-19T17:47:02.535027568+02:00"
