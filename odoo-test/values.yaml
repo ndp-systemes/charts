@@ -2,8 +2,8 @@
 ## ref: https://hub.docker.com/r/bitnami/odoo/tags/
 ##
 image:
-  registry: docker.io
-  repository: ndpsystemes/odoo
+  registry: registry.ndp-systemes.fr
+  repository: dockers/odoo
   tag: "10.0"
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
