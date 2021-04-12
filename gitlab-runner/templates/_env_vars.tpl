@@ -100,11 +100,16 @@
       name: {{ .secret }}
       key: {{ .key }}
 {{- end }}
+- name: RUNNER_PRE_BUILD_SCRIPT
+  value: |
+    #!/bin/sh
+    {{ range  .Values.envSecrets }}export {{ .name }}='$({{ .name }})'
+    {{ end }}
+{{- end }}
 {{- if .Values.envVars -}}
 {{ range .Values.envVars }}
 - name: {{ .name }}
   value: {{ .value | quote }}
-{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
