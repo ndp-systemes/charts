@@ -6,7 +6,7 @@
 - name: RUNNER_REQUEST_CONCURRENCY
   value: {{ default 1 .Values.runners.requestConcurrency | quote }}
 - name: RUNNER_EXECUTOR
-  value: "kubernetes"
+  value: {{ default "kubernetes" .Values.runners.executor | quote }}
 - name: REGISTER_LOCKED
   {{ if or (not (hasKey .Values.runners "locked")) .Values.runners.locked -}}
   value: "true"
@@ -15,6 +15,11 @@
   {{- end }}
 - name: RUNNER_TAG_LIST
   value: {{ default "" .Values.runners.tags | quote }}
+{{- if .Values.runners.outputLimit }}
+- name: RUNNER_OUTPUT_LIMIT
+  value: {{ .Values.runners.outputLimit | quote }}
+{{- end}}
+{{- if eq (default "kubernetes" .Values.runners.executor) "kubernetes" }}
 - name: KUBERNETES_IMAGE
   value: {{ .Values.runners.image | quote }}
 {{ if .Values.runners.privileged }}
@@ -23,14 +28,26 @@
 {{ end }}
 - name: KUBERNETES_NAMESPACE
   value: {{ default .Release.Namespace .Values.runners.namespace | quote }}
+{{- if .Values.runners.pollTimeout}}
+- name: KUBERNETES_POLL_TIMEOUT
+  value: {{ .Values.runners.pollTimeout | quote }}
+{{- end }}
 - name: KUBERNETES_CPU_LIMIT
   value: {{ default "" .Values.runners.builds.cpuLimit | quote }}
+- name: KUBERNETES_CPU_LIMIT_OVERWRITE_MAX_ALLOWED
+  value: {{ default "" .Values.runners.builds.cpuLimitOverwriteMaxAllowed | quote }}
 - name: KUBERNETES_MEMORY_LIMIT
   value: {{ default "" .Values.runners.builds.memoryLimit | quote }}
+- name: KUBERNETES_MEMORY_LIMIT_OVERWRITE_MAX_ALLOWED
+  value: {{ default "" .Values.runners.builds.memoryLimitOverwriteMaxAllowed | quote }}
 - name: KUBERNETES_CPU_REQUEST
   value: {{ default "" .Values.runners.builds.cpuRequests | quote }}
+- name: KUBERNETES_CPU_REQUEST_OVERWRITE_MAX_ALLOWED
+  value: {{ default "" .Values.runners.builds.cpuRequestsOverwriteMaxAllowed | quote }}
 - name: KUBERNETES_MEMORY_REQUEST
   value: {{ default "" .Values.runners.builds.memoryRequests| quote }}
+- name: KUBERNETES_MEMORY_REQUEST_OVERWRITE_MAX_ALLOWED
+  value: {{ default "" .Values.runners.builds.memoryRequestsOverwriteMaxAllowed | quote }}
 - name: KUBERNETES_SERVICE_ACCOUNT
   value: {{ default "" .Values.runners.serviceAccountName | quote }}
 - name: KUBERNETES_SERVICE_CPU_LIMIT
@@ -53,6 +70,25 @@
   value: {{ default "" .Values.runners.helpers.image | quote }}
 - name: KUBERNETES_PULL_POLICY
   value: {{ default "" .Values.runners.imagePullPolicy | quote }}
+{{- if .Values.runners.pod_security_context }}
+{{-   if .Values.runners.pod_security_context.run_as_non_root }}
+- name: KUBERNETES_POD_SECURITY_CONTEXT_RUN_AS_NON_ROOT
+  value: "true"
+{{-   end }}
+{{-   if .Values.runners.pod_security_context.run_as_user }}
+- name: KUBERNETES_POD_SECURITY_CONTEXT_RUN_AS_USER
+  value: {{ .Values.runners.pod_security_context.run_as_user | quote }}
+{{-   end }}
+{{-   if .Values.runners.pod_security_context.run_as_group }}
+- name: KUBERNETES_POD_SECURITY_CONTEXT_RUN_AS_GROUP
+  value: {{ .Values.runners.pod_security_context.run_as_group | quote }}
+{{-   end }}
+{{-   if .Values.runners.pod_security_context.fs_group }}
+- name: KUBERNETES_POD_SECURITY_CONTEXT_FS_GROUP
+  value: {{ .Values.runners.pod_security_context.fs_group | quote }}
+{{-   end }}
+{{- end }}
+{{- end }}
 {{- if .Values.runners.cache -}}
 {{ include "gitlab-runner.cache" . }}
 {{- end }}
@@ -63,12 +99,6 @@
     secretKeyRef:
       name: {{ .secret }}
       key: {{ .key }}
-{{- end }}
-- name: RUNNER_PRE_BUILD_SCRIPT
-  value: |
-    #!/bin/sh
-    {{ range  .Values.envSecrets }}export {{ .name }}='$({{ .name }})'
-    {{ end }}
 {{- end }}
 {{- if .Values.envVars -}}
 {{ range .Values.envVars }}
